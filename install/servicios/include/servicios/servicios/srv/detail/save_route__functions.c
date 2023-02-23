@@ -10,15 +10,21 @@
 
 #include "rcutils/allocator.h"
 
+// Include directives for member types
+// Member `file_path`
+#include "rosidl_runtime_c/string_functions.h"
+
 bool
 servicios__srv__SaveRoute_Request__init(servicios__srv__SaveRoute_Request * msg)
 {
   if (!msg) {
     return false;
   }
-  // a
-  // b
-  // c
+  // file_path
+  if (!rosidl_runtime_c__String__init(&msg->file_path)) {
+    servicios__srv__SaveRoute_Request__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -28,9 +34,8 @@ servicios__srv__SaveRoute_Request__fini(servicios__srv__SaveRoute_Request * msg)
   if (!msg) {
     return;
   }
-  // a
-  // b
-  // c
+  // file_path
+  rosidl_runtime_c__String__fini(&msg->file_path);
 }
 
 bool
@@ -39,16 +44,10 @@ servicios__srv__SaveRoute_Request__are_equal(const servicios__srv__SaveRoute_Req
   if (!lhs || !rhs) {
     return false;
   }
-  // a
-  if (lhs->a != rhs->a) {
-    return false;
-  }
-  // b
-  if (lhs->b != rhs->b) {
-    return false;
-  }
-  // c
-  if (lhs->c != rhs->c) {
+  // file_path
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->file_path), &(rhs->file_path)))
+  {
     return false;
   }
   return true;
@@ -62,12 +61,12 @@ servicios__srv__SaveRoute_Request__copy(
   if (!input || !output) {
     return false;
   }
-  // a
-  output->a = input->a;
-  // b
-  output->b = input->b;
-  // c
-  output->c = input->c;
+  // file_path
+  if (!rosidl_runtime_c__String__copy(
+      &(input->file_path), &(output->file_path)))
+  {
+    return false;
+  }
   return true;
 }
 

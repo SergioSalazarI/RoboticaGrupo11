@@ -1,3 +1,1 @@
-int64 a
-int64 b
-int64 c
+string file_path

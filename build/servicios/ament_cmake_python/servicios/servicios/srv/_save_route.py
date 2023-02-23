@@ -55,30 +55,22 @@ class SaveRoute_Request(metaclass=Metaclass_SaveRoute_Request):
     """Message class 'SaveRoute_Request'."""
 
     __slots__ = [
-        '_a',
-        '_b',
-        '_c',
+        '_file_path',
     ]
 
     _fields_and_field_types = {
-        'a': 'int64',
-        'b': 'int64',
-        'c': 'int64',
+        'file_path': 'string',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.a = kwargs.get('a', int())
-        self.b = kwargs.get('b', int())
-        self.c = kwargs.get('c', int())
+        self.file_path = kwargs.get('file_path', str())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -109,11 +101,7 @@ class SaveRoute_Request(metaclass=Metaclass_SaveRoute_Request):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.a != other.a:
-            return False
-        if self.b != other.b:
-            return False
-        if self.c != other.c:
+        if self.file_path != other.file_path:
             return False
         return True
 
@@ -123,49 +111,17 @@ class SaveRoute_Request(metaclass=Metaclass_SaveRoute_Request):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def a(self):
-        """Message field 'a'."""
-        return self._a
+    def file_path(self):
+        """Message field 'file_path'."""
+        return self._file_path
 
-    @a.setter
-    def a(self, value):
+    @file_path.setter
+    def file_path(self, value):
         if __debug__:
             assert \
-                isinstance(value, int), \
-                "The 'a' field must be of type 'int'"
-            assert value >= -9223372036854775808 and value < 9223372036854775808, \
-                "The 'a' field must be an integer in [-9223372036854775808, 9223372036854775807]"
-        self._a = value
-
-    @builtins.property
-    def b(self):
-        """Message field 'b'."""
-        return self._b
-
-    @b.setter
-    def b(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'b' field must be of type 'int'"
-            assert value >= -9223372036854775808 and value < 9223372036854775808, \
-                "The 'b' field must be an integer in [-9223372036854775808, 9223372036854775807]"
-        self._b = value
-
-    @builtins.property
-    def c(self):
-        """Message field 'c'."""
-        return self._c
-
-    @c.setter
-    def c(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'c' field must be of type 'int'"
-            assert value >= -9223372036854775808 and value < 9223372036854775808, \
-                "The 'c' field must be an integer in [-9223372036854775808, 9223372036854775807]"
-        self._c = value
+                isinstance(value, str), \
+                "The 'file_path' field must be of type 'str'"
+        self._file_path = value
 
 
 # Import statements for member types

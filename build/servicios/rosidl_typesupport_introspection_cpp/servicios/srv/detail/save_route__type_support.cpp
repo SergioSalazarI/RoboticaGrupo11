@@ -37,50 +37,16 @@ void SaveRoute_Request_fini_function(void * message_memory)
   typed_message->~SaveRoute_Request();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember SaveRoute_Request_message_member_array[3] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember SaveRoute_Request_message_member_array[1] = {
   {
-    "a",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT64,  // type
+    "file_path",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(servicios::srv::SaveRoute_Request, a),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "b",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT64,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(servicios::srv::SaveRoute_Request, b),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "c",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT64,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(servicios::srv::SaveRoute_Request, c),  // bytes offset in struct
+    offsetof(servicios::srv::SaveRoute_Request, file_path),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -94,7 +60,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SaveRoute_Req
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers SaveRoute_Request_message_members = {
   "servicios::srv",  // message namespace
   "SaveRoute_Request",  // message name
-  3,  // number of fields
+  1,  // number of fields
   sizeof(servicios::srv::SaveRoute_Request),
   SaveRoute_Request_message_member_array,  // message members
   SaveRoute_Request_init_function,  // function to initialize message memory (memory has to be allocated)

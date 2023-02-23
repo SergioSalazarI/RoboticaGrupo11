@@ -12,6 +12,10 @@
 #include "servicios/srv/detail/save_route__struct.h"
 
 
+// Include directives for member types
+// Member `file_path`
+#include "rosidl_runtime_c/string_functions.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -31,50 +35,16 @@ void servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__Save
   servicios__srv__SaveRoute_Request__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__SaveRoute_Request_message_member_array[3] = {
+static rosidl_typesupport_introspection_c__MessageMember servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__SaveRoute_Request_message_member_array[1] = {
   {
-    "a",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
+    "file_path",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(servicios__srv__SaveRoute_Request, a),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "b",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(servicios__srv__SaveRoute_Request, b),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "c",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(servicios__srv__SaveRoute_Request, c),  // bytes offset in struct
+    offsetof(servicios__srv__SaveRoute_Request, file_path),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -88,7 +58,7 @@ static rosidl_typesupport_introspection_c__MessageMember servicios__srv__SaveRou
 static const rosidl_typesupport_introspection_c__MessageMembers servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__SaveRoute_Request_message_members = {
   "servicios__srv",  // message namespace
   "SaveRoute_Request",  // message name
-  3,  // number of fields
+  1,  // number of fields
   sizeof(servicios__srv__SaveRoute_Request),
   servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__SaveRoute_Request_message_member_array,  // message members
   servicios__srv__SaveRoute_Request__rosidl_typesupport_introspection_c__SaveRoute_Request_init_function,  // function to initialize message memory (memory has to be allocated)

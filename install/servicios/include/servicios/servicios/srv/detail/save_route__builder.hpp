@@ -21,48 +21,16 @@ namespace srv
 namespace builder
 {
 
-class Init_SaveRoute_Request_c
+class Init_SaveRoute_Request_file_path
 {
 public:
-  explicit Init_SaveRoute_Request_c(::servicios::srv::SaveRoute_Request & msg)
-  : msg_(msg)
-  {}
-  ::servicios::srv::SaveRoute_Request c(::servicios::srv::SaveRoute_Request::_c_type arg)
-  {
-    msg_.c = std::move(arg);
-    return std::move(msg_);
-  }
-
-private:
-  ::servicios::srv::SaveRoute_Request msg_;
-};
-
-class Init_SaveRoute_Request_b
-{
-public:
-  explicit Init_SaveRoute_Request_b(::servicios::srv::SaveRoute_Request & msg)
-  : msg_(msg)
-  {}
-  Init_SaveRoute_Request_c b(::servicios::srv::SaveRoute_Request::_b_type arg)
-  {
-    msg_.b = std::move(arg);
-    return Init_SaveRoute_Request_c(msg_);
-  }
-
-private:
-  ::servicios::srv::SaveRoute_Request msg_;
-};
-
-class Init_SaveRoute_Request_a
-{
-public:
-  Init_SaveRoute_Request_a()
+  Init_SaveRoute_Request_file_path()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_SaveRoute_Request_b a(::servicios::srv::SaveRoute_Request::_a_type arg)
+  ::servicios::srv::SaveRoute_Request file_path(::servicios::srv::SaveRoute_Request::_file_path_type arg)
   {
-    msg_.a = std::move(arg);
-    return Init_SaveRoute_Request_b(msg_);
+    msg_.file_path = std::move(arg);
+    return std::move(msg_);
   }
 
 private:
@@ -80,7 +48,7 @@ template<>
 inline
 auto build<::servicios::srv::SaveRoute_Request>()
 {
-  return servicios::srv::builder::Init_SaveRoute_Request_a();
+  return servicios::srv::builder::Init_SaveRoute_Request_file_path();
 }
 
 }  // namespace servicios

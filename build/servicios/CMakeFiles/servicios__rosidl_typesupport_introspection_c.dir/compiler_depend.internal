@@ -66,5 +66,8 @@ CMakeFiles/servicios__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /home/sergio/turtle_bot_11/build/servicios/rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h
  /home/sergio/turtle_bot_11/build/servicios/rosidl_generator_c/servicios/srv/detail/save_route__struct.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h
  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
 

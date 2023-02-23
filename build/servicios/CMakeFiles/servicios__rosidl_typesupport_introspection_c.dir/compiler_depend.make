@@ -65,6 +65,9 @@ CMakeFiles/servicios__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h \
   rosidl_generator_c/servicios/srv/detail/save_route__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
   /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
 
 
@@ -79,6 +82,8 @@ rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
@@ -107,6 +112,8 @@ rosidl_typesupport_introspection_c/servicios/msg/rosidl_typesupport_introspectio
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h:
 
@@ -185,6 +192,8 @@ rosidl_generator_c/servicios/srv/detail/save_route__functions.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
 
 rosidl_typesupport_introspection_c/servicios/srv/detail/save_route__rosidl_typesupport_introspection_c.h:
 

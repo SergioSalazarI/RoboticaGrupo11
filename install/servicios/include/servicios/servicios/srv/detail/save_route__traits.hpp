@@ -25,24 +25,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: a
+  // member: file_path
   {
-    out << "a: ";
-    rosidl_generator_traits::value_to_yaml(msg.a, out);
-    out << ", ";
-  }
-
-  // member: b
-  {
-    out << "b: ";
-    rosidl_generator_traits::value_to_yaml(msg.b, out);
-    out << ", ";
-  }
-
-  // member: c
-  {
-    out << "c: ";
-    rosidl_generator_traits::value_to_yaml(msg.c, out);
+    out << "file_path: ";
+    rosidl_generator_traits::value_to_yaml(msg.file_path, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -51,33 +37,13 @@ inline void to_block_style_yaml(
   const SaveRoute_Request & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: a
+  // member: file_path
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "a: ";
-    rosidl_generator_traits::value_to_yaml(msg.a, out);
-    out << "\n";
-  }
-
-  // member: b
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "b: ";
-    rosidl_generator_traits::value_to_yaml(msg.b, out);
-    out << "\n";
-  }
-
-  // member: c
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "c: ";
-    rosidl_generator_traits::value_to_yaml(msg.c, out);
+    out << "file_path: ";
+    rosidl_generator_traits::value_to_yaml(msg.file_path, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -128,11 +94,11 @@ inline const char * name<servicios::srv::SaveRoute_Request>()
 
 template<>
 struct has_fixed_size<servicios::srv::SaveRoute_Request>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct has_bounded_size<servicios::srv::SaveRoute_Request>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct is_message<servicios::srv::SaveRoute_Request>

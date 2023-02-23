@@ -34,6 +34,8 @@ extern "C"
 {
 #endif
 
+#include "rosidl_runtime_c/string.h"  // file_path
+#include "rosidl_runtime_c/string_functions.h"  // file_path
 
 // forward declare type support functions
 
@@ -49,19 +51,18 @@ static bool _SaveRoute_Request__cdr_serialize(
     return false;
   }
   const _SaveRoute_Request__ros_msg_type * ros_message = static_cast<const _SaveRoute_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: a
+  // Field name: file_path
   {
-    cdr << ros_message->a;
-  }
-
-  // Field name: b
-  {
-    cdr << ros_message->b;
-  }
-
-  // Field name: c
-  {
-    cdr << ros_message->c;
+    const rosidl_runtime_c__String * str = &ros_message->file_path;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
+    }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
   }
 
   return true;
@@ -76,19 +77,20 @@ static bool _SaveRoute_Request__cdr_deserialize(
     return false;
   }
   _SaveRoute_Request__ros_msg_type * ros_message = static_cast<_SaveRoute_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: a
+  // Field name: file_path
   {
-    cdr >> ros_message->a;
-  }
-
-  // Field name: b
-  {
-    cdr >> ros_message->b;
-  }
-
-  // Field name: c
-  {
-    cdr >> ros_message->c;
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->file_path.data) {
+      rosidl_runtime_c__String__init(&ros_message->file_path);
+    }
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->file_path,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'file_path'\n");
+      return false;
+    }
   }
 
   return true;
@@ -108,24 +110,10 @@ size_t get_serialized_size_servicios__srv__SaveRoute_Request(
   (void)padding;
   (void)wchar_size;
 
-  // field.name a
-  {
-    size_t item_size = sizeof(ros_message->a);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name b
-  {
-    size_t item_size = sizeof(ros_message->b);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name c
-  {
-    size_t item_size = sizeof(ros_message->c);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
+  // field.name file_path
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->file_path.size + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -153,26 +141,17 @@ size_t max_serialized_size_servicios__srv__SaveRoute_Request(
   full_bounded = true;
   is_plain = true;
 
-  // member: a
+  // member: file_path
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
-  }
-  // member: b
-  {
-    size_t array_size = 1;
-
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
-  }
-  // member: c
-  {
-    size_t array_size = 1;
-
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    full_bounded = false;
+    is_plain = false;
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
+    }
   }
 
   return current_alignment - initial_alignment;

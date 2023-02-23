@@ -1,19 +1,26 @@
 #! /usr/bin/env python
 
 import rclpy
-
-from pynput import keyboard as kb
 from rclpy.node import Node
+
 from geometry_msgs.msg import Twist
 from servicios.srv import SaveRoute
 from functools import partial
+
+from pynput import keyboard as kb
+
+import tkinter as tk
+from tkinter import filedialog
+
 from datetime import datetime
+from time import perf_counter
 
 class teleop(Node):
     
     def __init__(self):
         super().__init__("turtle_bot_teleop")
         self.route = []
+        self.current_key = 'q'
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.get_logger().info("Turtle Teleop has been started correctly.")
         
@@ -27,10 +34,9 @@ class teleop(Node):
         print("________________________________________________________________")
         
         #le pide al usuario los parametros de velocidad lineal y velocidad angular
-        
     def receive_parameters(self):
         self.linear_vel = float(input("[INFO] Indique la velocidad lineal deseada:"))
-        self.angular_vel = float(input("[INFO] Indique la velocidad angular deseada."))
+        self.angular_vel = float(input("[INFO] Indique la velocidad angular deseada:"))
         self.save_route = float(input("[INFO] ¿Desea guardar la ruta?"))
         self.print_instructions()
         
@@ -49,7 +55,14 @@ class teleop(Node):
         self.cmd_publisher.publish(twist_mss)
         
     def callback_SaveRoute(self,ruta):
-        with open("aaa.txt",'w') as f:
+        root = tk.Tk()
+        root.withdraw()
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".txt",
+            filetypes=[("Archivo TXT","*.txt")]
+        )
+        with open(file_path,'w') as f:
+            f.writelines([str(self.linear_vel)+"\n",str(self.angular_vel)])
             f.writelines(ruta)           
     
     #asigna valores a y l dependiendo de la tecla presionada
@@ -67,12 +80,13 @@ class teleop(Node):
                 else:
                     l = 1
                 self.key_callback(a,l)
-             
             else:
                 print("La tecla presionada no tiene un movimiento asociado \n Siga las instrucciones.")
                 self.print_instructions()
-            
-            self.current_time = datetime.now()
+                
+            if key.char != self.current_key:
+                self.current_time = perf_counter()
+                self.current_key = key.char
             
             if key.char == 'n' and self.save_route==1:
                 print("[INFO] Se guardo el recorrido.")
@@ -83,9 +97,13 @@ class teleop(Node):
         
         #llama a la función de parar cuando la tecla se deja de presionar
     def on_release(self,key):
-        diff = datetime.now()-self.current_time
-        if self.save_route==1:
-            self.route.append(key.char+";"+str(diff.seconds)+"\n")
+        diff = perf_counter()-self.current_time
+        self.current_time = perf_counter()
+        try:
+            if self.save_route==1 :
+                self.route.append("\n"+key.char+";"+str(diff))
+        except:
+            print("hay un problema :))")
         self.stops_movement()
         
         #espera que se presione una tecla para escucharla y ejecutar alguna función

@@ -17,12 +17,14 @@ extern "C"
 
 // Constants defined in the message
 
+// Include directives for member types
+// Member 'file_path'
+#include "rosidl_runtime_c/string.h"
+
 /// Struct defined in srv/SaveRoute in the package servicios.
 typedef struct servicios__srv__SaveRoute_Request
 {
-  int64_t a;
-  int64_t b;
-  int64_t c;
+  rosidl_runtime_c__String file_path;
 } servicios__srv__SaveRoute_Request;
 
 // Struct for a sequence of servicios__srv__SaveRoute_Request.
