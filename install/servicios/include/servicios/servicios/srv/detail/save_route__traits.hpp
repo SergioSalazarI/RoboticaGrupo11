@@ -117,10 +117,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: sum
+  // member: result
   {
-    out << "sum: ";
-    rosidl_generator_traits::value_to_yaml(msg.sum, out);
+    out << "result: ";
+    rosidl_generator_traits::value_to_yaml(msg.result, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -129,13 +129,13 @@ inline void to_block_style_yaml(
   const SaveRoute_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: sum
+  // member: result
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "sum: ";
-    rosidl_generator_traits::value_to_yaml(msg.sum, out);
+    out << "result: ";
+    rosidl_generator_traits::value_to_yaml(msg.result, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -186,11 +186,11 @@ inline const char * name<servicios::srv::SaveRoute_Response>()
 
 template<>
 struct has_fixed_size<servicios::srv::SaveRoute_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct has_bounded_size<servicios::srv::SaveRoute_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, false> {};
 
 template<>
 struct is_message<servicios::srv::SaveRoute_Response>

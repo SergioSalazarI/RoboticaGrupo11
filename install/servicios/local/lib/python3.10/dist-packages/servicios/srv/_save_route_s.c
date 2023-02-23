@@ -126,6 +126,11 @@ PyObject * servicios__srv__save_route__request__convert_to_py(void * raw_ros_mes
 // already included above
 // #include "servicios/srv/detail/save_route__functions.h"
 
+// already included above
+// #include "rosidl_runtime_c/string.h"
+// already included above
+// #include "rosidl_runtime_c/string_functions.h"
+
 
 ROSIDL_GENERATOR_C_EXPORT
 bool servicios__srv__save_route__response__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -160,13 +165,19 @@ bool servicios__srv__save_route__response__convert_from_py(PyObject * _pymsg, vo
     assert(strncmp("servicios.srv._save_route.SaveRoute_Response", full_classname_dest, 44) == 0);
   }
   servicios__srv__SaveRoute_Response * ros_message = _ros_message;
-  {  // sum
-    PyObject * field = PyObject_GetAttrString(_pymsg, "sum");
+  {  // result
+    PyObject * field = PyObject_GetAttrString(_pymsg, "result");
     if (!field) {
       return false;
     }
-    assert(PyLong_Check(field));
-    ros_message->sum = PyLong_AsLongLong(field);
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
+      Py_DECREF(field);
+      return false;
+    }
+    rosidl_runtime_c__String__assign(&ros_message->result, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
     Py_DECREF(field);
   }
 
@@ -191,11 +202,17 @@ PyObject * servicios__srv__save_route__response__convert_to_py(void * raw_ros_me
     }
   }
   servicios__srv__SaveRoute_Response * ros_message = (servicios__srv__SaveRoute_Response *)raw_ros_message;
-  {  // sum
+  {  // result
     PyObject * field = NULL;
-    field = PyLong_FromLongLong(ros_message->sum);
+    field = PyUnicode_DecodeUTF8(
+      ros_message->result.data,
+      strlen(ros_message->result.data),
+      "replace");
+    if (!field) {
+      return NULL;
+    }
     {
-      int rc = PyObject_SetAttrString(_pymessage, "sum", field);
+      int rc = PyObject_SetAttrString(_pymessage, "result", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

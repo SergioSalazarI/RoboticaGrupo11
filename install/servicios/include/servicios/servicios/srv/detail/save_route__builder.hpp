@@ -63,15 +63,15 @@ namespace srv
 namespace builder
 {
 
-class Init_SaveRoute_Response_sum
+class Init_SaveRoute_Response_result
 {
 public:
-  Init_SaveRoute_Response_sum()
+  Init_SaveRoute_Response_result()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::servicios::srv::SaveRoute_Response sum(::servicios::srv::SaveRoute_Response::_sum_type arg)
+  ::servicios::srv::SaveRoute_Response result(::servicios::srv::SaveRoute_Response::_result_type arg)
   {
-    msg_.sum = std::move(arg);
+    msg_.result = std::move(arg);
     return std::move(msg_);
   }
 
@@ -90,7 +90,7 @@ template<>
 inline
 auto build<::servicios::srv::SaveRoute_Response>()
 {
-  return servicios::srv::builder::Init_SaveRoute_Response_sum();
+  return servicios::srv::builder::Init_SaveRoute_Response_result();
 }
 
 }  // namespace servicios

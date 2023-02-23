@@ -12,7 +12,6 @@ from pynput import keyboard as kb
 import tkinter as tk
 from tkinter import filedialog
 
-from datetime import datetime
 from time import perf_counter
 
 class teleop(Node):
@@ -27,10 +26,10 @@ class teleop(Node):
     def print_instructions(self):
         print("________________________________________________________________")
         print("                        Instrucciones")
-        print("Presione 'W' para ir hacia adelante.")
-        print("Presione 'S' para ir hacia atras.")
-        print(f"Presione 'D' para rotar {self.angular_vel} grados a la derecha.")
-        print(f"Presione 'A' para rotar {self.angular_vel} grados a la izquierda.")
+        print("    Presione 'W' para ir hacia adelante.")
+        print("    Presione 'S' para ir hacia atras.")
+        print(f"    Presione 'D' para rotar {self.angular_vel} grados a la derecha.")
+        print(f"    Presione 'A' para rotar {self.angular_vel} grados a la izquierda.")
         print("________________________________________________________________")
         
         #le pide al usuario los parametros de velocidad lineal y velocidad angular
@@ -63,7 +62,7 @@ class teleop(Node):
         )
         with open(file_path,'w') as f:
             f.writelines([str(self.linear_vel)+"\n",str(self.angular_vel)])
-            f.writelines(ruta)           
+            f.writelines(ruta)          
     
     #asigna valores a y l dependiendo de la tecla presionada
     def on_press(self,key):
@@ -111,21 +110,7 @@ class teleop(Node):
         with kb.Listener(on_press=self.on_press,on_release=self.on_release) as listener:
             listener.join()
             
-            
-    def callback_save_route(self,entrada):
-        cliente = self.create_client(SaveRoute,"turtle_bot_save_route")
-        #while not cliente.wait_for_service(1.0):
-        request = SaveRoute.Request()
-        request.name = entrada
         
-        future = cliente.call_async(request)
-        future.add_done_callback(partial[self.callback_save_route_future])
-        
-    def callback_save_route_future(self, future):
-        try:
-            response = future.result()
-        except Exception as e:
-            self.get_logger().error("algo paso :(((") 
 
 def main(args=None):
     rclpy.init(args=args)

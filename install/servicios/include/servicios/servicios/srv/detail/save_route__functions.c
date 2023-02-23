@@ -250,13 +250,22 @@ servicios__srv__SaveRoute_Request__Sequence__copy(
 }
 
 
+// Include directives for member types
+// Member `result`
+// already included above
+// #include "rosidl_runtime_c/string_functions.h"
+
 bool
 servicios__srv__SaveRoute_Response__init(servicios__srv__SaveRoute_Response * msg)
 {
   if (!msg) {
     return false;
   }
-  // sum
+  // result
+  if (!rosidl_runtime_c__String__init(&msg->result)) {
+    servicios__srv__SaveRoute_Response__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -266,7 +275,8 @@ servicios__srv__SaveRoute_Response__fini(servicios__srv__SaveRoute_Response * ms
   if (!msg) {
     return;
   }
-  // sum
+  // result
+  rosidl_runtime_c__String__fini(&msg->result);
 }
 
 bool
@@ -275,8 +285,10 @@ servicios__srv__SaveRoute_Response__are_equal(const servicios__srv__SaveRoute_Re
   if (!lhs || !rhs) {
     return false;
   }
-  // sum
-  if (lhs->sum != rhs->sum) {
+  // result
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->result), &(rhs->result)))
+  {
     return false;
   }
   return true;
@@ -290,8 +302,12 @@ servicios__srv__SaveRoute_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // sum
-  output->sum = input->sum;
+  // result
+  if (!rosidl_runtime_c__String__copy(
+      &(input->result), &(output->result)))
+  {
+    return false;
+  }
   return true;
 }
 
