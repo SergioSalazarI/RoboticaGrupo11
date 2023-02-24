@@ -3,7 +3,7 @@
   "output_dir": "/home/sergio/turtle_bot_11/build/servicios/rosidl_generator_cpp/servicios",
   "template_dir": "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios:srv/SaveRoute.idl"
+    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios:srv/ReproduceRoute.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -82,7 +82,7 @@
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__builder.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
-    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios/srv/SaveRoute.idl",
+    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios/srv/ReproduceRoute.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

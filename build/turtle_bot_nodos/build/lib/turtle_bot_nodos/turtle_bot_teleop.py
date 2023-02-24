@@ -4,7 +4,8 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-from servicios.srv import SaveRoute
+from std_msgs.msg import Bool
+#from servicios.srv import SaveRoute
 from functools import partial
 
 from pynput import keyboard as kb
@@ -16,12 +17,46 @@ from time import perf_counter
 
 class teleop(Node):
     
+    def listener_callback_save(self,msg_save):
+        """Escucha el mensaje de tipo BOOL que llega al tópico 'turtlebot_save' y lo asigna a la variable 'save_route'.
+         
+          Args:
+            msg: Mensaje tipo BOOL que llega al tópico 'turtlebot_save'
+        """
+        print("________________________________________________________________")
+        print(f"msg_save ={msg_save.data}")
+        print("________________________________________________________________")
+        if msg_save.data:
+          self.save_route = 1
+          print("________________________________________________________________")
+          print("        save_route = 1")
+
+    def listener_callback_end(self,msg_end):
+        """Escucha el mensaje de tipo BOOL que llega al tópico 'turtlebot_end' y lo asigna en la variable 'end'.
+         
+          Args:
+            msg: Mensaje tipo BOOL que llega al tópico 'turtlebot_end'
+        """
+        print("________________________________________________________________")
+        print(f"msg_end = {msg_end.data}")
+        print("________________________________________________________________")
+        if msg_end.data:
+            self.end = 1
+            print("________________________________________________________________")
+            print("        end = 1")
+    
     def __init__(self):
         super().__init__("turtle_bot_teleop")
         self.route = []
         self.current_key = 'q'
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.get_logger().info("Turtle Teleop has been started correctly.")
+        
+        #Creamos la subscripción al tópico 'turtlebot_save' que indica si se quiere o no guardar el recorrido:
+        print("aquiaaaaaa")
+        self.subscription_save = self.create_subscription(Bool,'/turtlebot_save',self.listener_callback_save,10)
+        #Creamos la subscripción al tópico 'turtlebot_end' que indica cuando se quiere guardar el recorrido:
+        self.subscription_end = self.create_subscription(Bool,'/turtlebot_end',self.listener_callback_end,10)
         
     def print_instructions(self):
         print("________________________________________________________________")

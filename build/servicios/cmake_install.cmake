@@ -356,19 +356,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios/srv/SaveRoute.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios/srv/ReproduceRoute.idl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/src/servicios/srv/SaveRoute.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/src/servicios/srv/ReproduceRoute.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_cmake/srv/SaveRoute_Request.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_cmake/srv/ReproduceRoute_Request.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_cmake/srv/SaveRoute_Response.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servicios/srv" TYPE FILE FILES "/home/sergio/turtle_bot_11/build/servicios/rosidl_cmake/srv/ReproduceRoute_Response.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

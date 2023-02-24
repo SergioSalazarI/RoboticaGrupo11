@@ -12,29 +12,53 @@ class player(Node):
         
     def __init__(self):
         super().__init__("turtle_bot_teleop")
-        #self.srv = self.create_service(ReproduceRoute, "ReproduceRoute", self.save_route_callback)
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
+        self.file_path=""
         self.get_logger().info("turtle_bot_player has been started correctly.")
-    
-    """ def save_route_callback(self, request, response):
-        self.file_path = request.file_path               
-        response.result = "funciona bien"                             
-        self.get_logger().info('Incoming request\na: b:c:') 
-        return response """
         
-    def select_route(self):
-        root = tk.Tk()
-        root.withdraw()
-        self.file_path = filedialog.askopenfilename(
-            defaultextension=".txt",
-            filetypes=[("Archivo TXT","*.txt")])
-        print(f"[INFO] Usted selecciono la ruta: {self.file_path}")
+    def callback_get_route(self):
+        cliente = self.create_client(ReproduceRoute,"/RP")
+        while not cliente.wait_for_service(1.0):
+            self.get_logger().info("---------------")
+        request = ReproduceRoute.Request()
+        request.file_path = "self.file_path"
+
+        self.future = cliente.call_async(request)
+        rclpy.spin_until_future_complete(self,future=self.future)
+        #future = cliente.call(request)
+        print(self.future.result().ruta)
+        self.file_path=self.future.result().ruta
+        #if future.done():
+        #    self.file_path=future.result().result
+        #    print(self.file_path)
+        #future = cliente.call(request)
+        #future.add_done_callback(self.callback_get_route_future)
         
     def read_vels(self):
         f = open(self.file_path)
         lines = f.readlines()
         self.linear_vel = float(lines[0])
         self.angular_vel = float(lines[1])
+        
+    def callback_get_route_future(self, future):
+        #try:
+            response = future.result()
+            print(response)
+            print(response.ruta)
+            print("111111111111111")
+            response = future.result()
+            self.file_path = str(response.result)
+            print("22222222222222222")
+            f = open(self.file_path)
+            lines = f.readlines()
+            self.linear_vel = float(lines[0])
+            self.angular_vel = float(lines[1])
+            f.close()
+            print(self.file_path)
+            self.get_logger().info(f'Se selecciono la ruta: {response.result}')
+            
+        #except Exception as e:
+        #    self.get_logger().error("algo paso :(((")
     
     def key_callback(self,a,l):
         twist_mss = Twist()
@@ -66,8 +90,12 @@ class player(Node):
 
         
     def read_keys(self):
-        try:
+        #try:
+            print("===========")
+            print(self.file_path)
             f = open(self.file_path)
+            print("________________")
+            print(self.file_path)
             lines = f.readlines()[2::]
             for l in lines:
                 ll = l.split(sep=';')
@@ -81,28 +109,8 @@ class player(Node):
                     diff = perf_counter()-current_time
                 self.stops_movement()
             print("fin")
-        except:
-            print("[INFO] No fue posible replicar su ruta. Revise el archivo seleccionado.")
-        
-    """ def callback_save_route(self):
-        cliente = self.create_client(SaveRoute,"SaveRoute")
-        while not cliente.wait_for_service(1.0):
-            self.get_logger().info("---------------")
-        request = SaveRoute.Request()
-        request.file_path = self.file_path
-
-        future = cliente.call_async(request)
-        future.add_done_callback(self.callback_save_route_future)
-        print("b")
-        
-    def callback_save_route_future(self, future):
-        print("c")
-        try:
-            response = future.result()
-            self.file_path =
-            self.get_logger().info(f'El servicio fue: {response}')
-        except Exception as e:
-            self.get_logger().error("algo paso :(((")  """
+        #except:
+        #    print("[INFO] No fue posible replicar su ruta. Revise el archivo seleccionado.")
 
 
 def main(args=None):
@@ -110,11 +118,13 @@ def main(args=None):
     
     player_node = player()
     
-    player_node.select_route()
+    player_node.callback_get_route()
+    print("-$$--$$--$$--$$--$$--$$--$$")
     player_node.read_vels()
     player_node.read_keys()
+    #player_node.read_keys()
     #player_node.callback_save_route()
-    
+    #rclpy.spin(player_node)
     while rclpy.ok():
         rclpy.spin_once(player_node)
     
