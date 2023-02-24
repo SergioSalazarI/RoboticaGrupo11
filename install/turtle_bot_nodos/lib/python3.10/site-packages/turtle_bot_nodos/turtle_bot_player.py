@@ -26,7 +26,7 @@ class route_saver(Node):
         self.get_logger().info('Funciona <3 <3 <3') 
         return response
 
-    def callback_get_route(self):
+    """ def callback_get_route(self):
         cliente = self.create_client(ReproduceRoute,"/RP")
         while not cliente.wait_for_service(1.0):
             self.get_logger().info("---------------")
@@ -36,7 +36,7 @@ class route_saver(Node):
         self.future = cliente.call_async(request)
         rclpy.spin_until_future_complete(self,future=self.future)
 
-        self.file_path=self.future.result().ruta
+        self.file_path=self.future.result().ruta """
         
     def read_vels(self):
         f = open(self.file_path)
