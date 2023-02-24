@@ -14,6 +14,9 @@ from tkinter import filedialog
 
 from time import perf_counter
 
+from servicios.srv import Save
+from servicios.srv import End
+
 class teleop(Node):
     
     def __init__(self):
@@ -22,6 +25,21 @@ class teleop(Node):
         self.current_key = 'q'
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.get_logger().info("Turtle Teleop has been started correctly.")
+
+        self.FinishRoute = 0
+
+        self.srv_save = self.create_service(Save, "Save",self.callback_Save)
+        self.srv_end = self.create_service(End, "End",self.callback_End)
+
+    def callback_End(self,request,response):
+        x = request.end
+        if x:
+            self.FinishRoute = 1
+    
+    def callback_Save(self,request,response):
+        x = request.save
+        if x:
+            self.save_route = 1
         
     def print_instructions(self):
         print("________________________________________________________________")
@@ -36,7 +54,6 @@ class teleop(Node):
     def receive_parameters(self):
         self.linear_vel = float(input("[INFO] Indique la velocidad lineal deseada:"))
         self.angular_vel = float(input("[INFO] Indique la velocidad angular deseada:"))
-        self.save_route = float(input("[INFO] ¿Desea guardar la ruta?"))
         self.print_instructions()
         
         #multiplica la velocidad lineal y angular por -1 o 1 dependiendo del casp
@@ -87,7 +104,7 @@ class teleop(Node):
                 self.current_time = perf_counter()
                 self.current_key = key.char
             
-            if key.char == 'n' and self.save_route==1:
+            if self.FinishRoute == 1 and self.save_route==1:
                 print("[INFO] Se guardo el recorrido.")
                 self.callback_SaveRoute(self.route) 
         except:
@@ -99,7 +116,7 @@ class teleop(Node):
         diff = perf_counter()-self.current_time
         self.current_time = perf_counter()
         try:
-            if self.save_route==1 :
+            if self.save_route == 1 :
                 self.route.append("\n"+key.char+";"+str(diff))
         except:
             print("hay un problema :))")

@@ -7,13 +7,20 @@ import tkinter as tk
 from tkinter import filedialog
 from geometry_msgs.msg import Twist
 from time import perf_counter
-#from servicios.srv import SaveRoute
+from servicios.srv import ReproduceRoute
 class player(Node):
         
     def __init__(self):
         super().__init__("turtle_bot_teleop")
+        #self.srv = self.create_service(ReproduceRoute, "ReproduceRoute", self.save_route_callback)
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.get_logger().info("turtle_bot_player has been started correctly.")
+    
+    """ def save_route_callback(self, request, response):
+        self.file_path = request.file_path               
+        response.result = "funciona bien"                             
+        self.get_logger().info('Incoming request\na: b:c:') 
+        return response """
         
     def select_route(self):
         root = tk.Tk()

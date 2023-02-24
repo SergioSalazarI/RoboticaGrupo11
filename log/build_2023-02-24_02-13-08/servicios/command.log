@@ -1,0 +1,2 @@
+Invoking command in '/home/saviveros/RoboticaGrupo11/build/servicios': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/saviveros/RoboticaGrupo11/src/servicios -DCMAKE_INSTALL_PREFIX=/home/saviveros/RoboticaGrupo11/install/servicios
+Invoked command in '/home/saviveros/RoboticaGrupo11/build/servicios' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/saviveros/RoboticaGrupo11/src/servicios -DCMAKE_INSTALL_PREFIX=/home/saviveros/RoboticaGrupo11/install/servicios

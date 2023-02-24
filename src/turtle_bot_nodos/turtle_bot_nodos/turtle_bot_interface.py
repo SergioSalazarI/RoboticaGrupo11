@@ -1,15 +1,20 @@
-#! /usr/bin/env python
-
 import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Bool
 
 import pygame
 from pygame.locals import *
 
 import tkinter as tk
 from tkinter import filedialog
+
+import queue
+
+from servicios.srv import ReproduceRoute
+from servicios.srv import Save
+from servicios.srv import End
 
 class Cell:
     """Crea objetos tipo casilla y los pinta en la pantalla de pygame.
@@ -265,77 +270,167 @@ class TextBox():
         screen.blit(self.surface, self.box)
 
 class Button():
-    def __init__(self, rectangle, fuente, backgroundColor, textColor):
+    def __init__(self, rectangle, fuente, backgroundColor, textColor,caption):
         self.rectangle = rectangle
         self.color = backgroundColor
-        self.surface = fuente.render("Guardar", True, textColor)
+        self.caption = caption
+        self.surface = fuente.render(self.caption, True, textColor)
         self.box = self.surface.get_rect()
         self.box.center = self.rectangle.center
 
     def paint(self, screen):
         pygame.draw.rect(screen, self.color, self.rectangle)
-        screen.blit(self.surface, self.box)
+        screen.blit(self.surface, self.box)  
 
 class DialogBox():
-    def __init__(self, screen, button, instructionsTextBox, nameTextBox):
+    def __init__(self, screen, buttons, instructionsTextBox, nameTextBox=None):
         self.screen = screen
-        self.button = button
+        self.buttons = buttons
         self.instructionsTextBox = instructionsTextBox
         self.nameTextBox = nameTextBox
 
-    def eventListener(self):
+    def eventListener(self,window):
+
         running = True
-        img_name = self.nameTextBox.text
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+        selection = ""
+
+        if window == "Menu":
+            win = 5
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
+                        if self.buttons[i].rectangle.collidepoint(event.pos):
+                            win = i
+            if win == 0:
                 running = False
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_BACKSPACE:
-                    img_name = img_name[:-1]
-                else:
-                    img_name += event.unicode
-            elif event.type == pygame.MOUSEBUTTONUP:
-                if self.button.rectangle.collidepoint(event.pos):
-                    root = tk.Tk()
-                    root.withdraw()
-                    file_path = filedialog.asksaveasfilename(
-                        initialfile = self.nameTextBox.text, 
-                        defaultextension=".jpg", 
-                        filetypes=[("Archivo JPG", "*.jpg")]
-                    )
-                    if file_path:
-                            # Save the image to the selected file path
-                        pygame.image.save(self.screen, file_path)
-                        img = pygame.image.load(file_path)
-                        tablero = pygame.Rect(0,0,500,500)
-                        tab_recortado = img.subsurface(tablero)
-                        pygame.image.save(tab_recortado, file_path)
-                    root.destroy()
-        self.nameTextBox.setText(img_name)
-        self.paintDialog()
-        return running
+                selection = "Teclas"
+            elif win == 1:
+                running = False
+                selection = "TXT"
+        
+        elif window == "Teclas":
+            win = 5
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
+                        if self.buttons[i].rectangle.collidepoint(event.pos):
+                            win = i
+            if win == 0:
+                running = False
+                selection = "Yes"
+            elif win == 1:
+                running = False
+                selection = "No"
 
-    def paintDialog(self):
-        pygame.draw.rect(self.screen, (250,250,250),(0,500, 500, 80))
-        self.nameTextBox.paint(self.screen)
+        elif window == "TXT":
+            win = 5
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
+                        if self.buttons[i].rectangle.collidepoint(event.pos):
+                            win = i
+            if win == 0:
+                running = False
+                selection = "BuscadorArchivos"
+
+        elif window == "Tablero":
+            img_name = self.nameTextBox.text
+            selection = ""
+            win = 5
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_BACKSPACE:
+                        img_name = img_name[:-1]
+                    else:
+                        img_name += event.unicode
+                elif event.type == pygame.MOUSEBUTTONUP:
+                    for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
+                        if self.buttons[i].rectangle.collidepoint(event.pos):
+                            win = i
+    
+            if win == 0:
+                selection = "Save"
+                root = tk.Tk()
+                root.withdraw()
+                file_path = filedialog.asksaveasfilename(
+                    initialfile = self.nameTextBox.text, 
+                    defaultextension=".jpg", 
+                    filetypes=[("Archivo JPG", "*.jpg")]
+                )
+                if file_path:
+                    # Save the image to the selected file path
+                    pygame.image.save(self.screen, file_path)
+                    img = pygame.image.load(file_path)
+                    tablero = pygame.Rect(0,0,500,500)
+                    tab_recortado = img.subsurface(tablero)
+                    pygame.image.save(tab_recortado, file_path)
+                root.destroy()
+            elif win == 1:
+                selection = "end"
+                        
+            self.nameTextBox.setText(img_name)
+            self.paintDialog((250,250,250),(0,500, 500, 80))
+
+        return running,selection
+
+    def paintDialog(self,bgColor,rect):
+        pygame.draw.rect(self.screen, bgColor,rect)
+
+        if self.nameTextBox != None:
+            self.nameTextBox.paint(self.screen)
+
         self.instructionsTextBox.paint(self.screen)
-        self.button.paint(self.screen)
 
+        for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
+            self.buttons[i].paint(self.screen)
 
 class Interface(Node):
     """Crea la interfaz. Hereda de la superclase Node"""
 
-    def __init__(self, screen, board, dialogBox):
+    def __init__(self, screen, board, dialogBox,window):
         """Cosntructor de la clase interfaz. Crea el nodo 'turtle_bot_interface' y se suscribe al tópico 'turtlebot_position'
         para conocer la posición en tiempo real del robot sobre el entorno de coppelia.
         """
         super().__init__('turtle_bot_interface')
 
+        #Creamos la subscripción al tópico 'turtlebot_position'
         self.subscription = self.create_subscription(Twist,'turtlebot_position',self.listener_callback,10)
+
+        #Creamos los clientes:
+        self.client = self.create_client(ReproduceRoute, "ReproduceRoute")
+
+        self.client_save = self.create_client(Save, "Save")
+
+        self.client_end = self.create_client(End, "End")
 
         self.screen = screen
         self.board = board
         self.dialogBox = dialogBox
+        self.window = window
+
+    def CallClient_TxtRoute(self,file_path):
+
+        if self.file_path != "":
+            pass
+            request = ReproduceRoute.Request()
+            request.filepath = file_path
+            ReproduceRoute.call_async(request)
+    
+    def CallClient_SaveRoute(self,answ):
+
+        if self.file_path != "":
+            pass
+            request = ReproduceRoute.Request()
+            request.save = answ
+            ReproduceRoute.call_async(request)
         
     def listener_callback(self, msg):
         msgx = msg.linear.x
@@ -343,28 +438,86 @@ class Interface(Node):
 
         '''Revisa que en el caso de tener un evento de tipo QUIT, es decir, que se presione la x en la ventana de
         pygame, esta se cierre cambiando la variable running a false'''
-        running = self.dialogBox.eventListener()
+        running,selection = self.dialogBox.eventListener(self.window)
 
         if  running:
             '''Mueve el robot a la posición que viene de Coppelia'''        
             self.board.moveRobot(msgx,msgy)
 
+            if selection == "end":
+                end = True
+                request = ReproduceRoute.Request()
+                request.ThreadEnd = end
+                ReproduceRoute.call_async(request)
+                print(f"[INFO] Se publico la end TRUE. answ = {end}")
+
+
             '''Actualiza la pantalla de pygame para que aparezca en pantalla el movimiento del robot'''
             pygame.display.flip()
+            self.CallClient_SaveRoute()
+
         else:
             print("------> Tratando de destruir <-------")
             pygame.quit()
             self.destroy_node()
             rclpy.shutdown()
-            
-
 class App():
-    def createDisplay(self, coordinate):
+
+    def createDisplay(self, coordinate,caption):
         """Crea la pantalla en la cual se dibuja el recorrido del robot"""
         screen = pygame.display.set_mode(coordinate)
-        pygame.display.set_caption("Turtle Bot Interface")
+        pygame.display.set_caption(caption)
         return screen
+    
+    def createMenuButtons(self, fuente, bgColor, TxtColor):
+        """Crea el arreglo de botones del menu.
+        
+        Args:
+            fuente: 
+        """
+        buttons = []
+        buttons.append(Button(pygame.Rect(80, 100, 350, 50), fuente, bgColor, TxtColor,"Mover Coppelia con Teclas"))
+        buttons.append(Button(pygame.Rect(80, 180, 350, 50), fuente, bgColor, TxtColor,"Mover Coppelia con Archivo .Txt"))
+        
+        return buttons
+    
+    def createYesNoButtons(self, fuente, bgColor, TxtColor):
+        """Crea un arreglo con los botones 'Si' y 'No'.
+        
+        Args:
+            
+        """
+        buttons = []
+        buttons.append(Button(pygame.Rect(200, 100, 100, 50), fuente, bgColor, TxtColor,"Si"))
+        buttons.append(Button(pygame.Rect(200, 180, 100, 50), fuente, bgColor, TxtColor,"No"))
+        
+        return buttons
 
+    def createSelectButton(self,fuente, bgColor, TxtColor):
+        """Crea un arreglo con el botón 'seleccionar'.
+        
+        Args:
+            
+        """
+        buttons = []
+        buttons.append(Button(pygame.Rect(100, 150, 250, 50), fuente, bgColor, TxtColor,"Seleccionar"))
+        
+        return buttons
+
+    def createBoardButtons(self,fuente, bgColor, TxtColor,btn,color):
+        """Crea un arreglo con el botón 'seleccionar'.
+        
+        Args:
+            
+        """
+        buttons = []
+        buttons.append(Button(pygame.Rect(200, 550, 100, 25), fuente, bgColor, TxtColor,"Guardar"))
+        #si se eligió guardar el recorrido se añade el botón de "Terminar recorrido"
+        if btn:
+            buttons.append(Button(pygame.Rect(300, 500, 200, 25), fuente, color, TxtColor,"Terminar Recorrido"))
+
+        return buttons
+    
     def createPlants(self, color):
         """Crea el arreglo de plantas y les asigna un color.
         
@@ -379,14 +532,23 @@ class App():
         
         return plants
 
-    def run(self):
-        """Inicializa la interfaz de pygame dandole valor a las constantes y creando los diferentes objetos que se dibujan
-        en pantalla.
-        """
 
-        #CONSTANTS:
+    def createFont(self,type,size):
+        if type == "bold":
+            fuente = pygame.font.SysFont("Arial Black",size)
+        elif type == "normal":
+            fuente = pygame.font.SysFont("Arial",size)
+
+        return fuente
+
+    def run(self):
+
+        #CONSTANTES:
 
         #Tamaño de la pantalla de pygame en pixeles:
+        menu_screen_width = 500
+        menu_screen_height = 300
+
         screen_width = 500
         screen_height = 580
 
@@ -404,60 +566,182 @@ class App():
         #Dimensiones de la cuadricula:
         dimension = 10
 
-        #Se crea una nueva pantalla:
-        screen = self.createDisplay((screen_width, screen_height))
-        pygame.display.set_caption("Turtle Bot Interface")
-
         #creamos las fuentes a utilizar:
         pygame.font.init()
-        fuente = pygame.font.SysFont("Arial Black",20)
-        fuente2 = pygame.font.SysFont("Arial",20)
+        fuente = self.createFont("bold",20)
+        fuente2 = self.createFont("normal",20)
+        fuenteMenu = self.createFont("bold",30)
+
+        # Crea la ventana del menú:
+        caption = "Turtle Bot Menu"
+        menu = self.createDisplay((menu_screen_width, menu_screen_height),caption)
 
         #creamos el cuadro de texto para dar indicaciones:
-        instructionsTextBox = TextBox("Nombre de Archivo:", fuente, Black, (80, 512))
+        InstructionsTextBox = TextBox("Bienvenido, elija una opción:", fuenteMenu, Black, (250, 50))
 
-        #creamos el cuadro de texto en el que se va a guardar el nombre de la imagen:
-        nameTextBox = TextBox("", fuente2, Black, (250, 530))
-
-        #Creamos el boton "guardar":
-        button = Button(pygame.Rect(200, 550, 100, 25), fuente, Grey, Black)
-
-        #Creamos la lista de plantas y añadimos 4 objetos de tipo planta que recreen las observadas en Coppelia:
-        plants = self.createPlants(Green)
-
-        #creamos el objeto tipo robot y lo inicializamos en el centro de la pantalla:
-        robot = Robot((board_size/2, board_size/2), 20, Red)
-
-        #creamos el onjeto tipo tablero:
-        board = Board(dimension,board_size,White,Grey,plants,robot)
+        #Creamos la lista de botones de la pantalla:
+        buttons = self.createMenuButtons(fuenteMenu,Grey,Black)
 
         #Pintamos la escena en la pantalla de pygame creada:
-        board.paint(screen)
-        nameTextBox.paint(screen)
-        instructionsTextBox.paint(screen)
-        button.paint(screen)
+        dialogBox = DialogBox(menu, buttons, InstructionsTextBox)
+        dialogBox.paintDialog(White,(0,0, 500, 300))
 
-        dialogBox = DialogBox(screen, button, instructionsTextBox, nameTextBox)
-        dialogBox.paintDialog()
+        #Variables que indican el botón presionado en el menu:
+        winTeclas = False
+        winTXT = False
+        winTablero = False
+        winTablero2 = False
 
-        
-        rclpy.init()
-        interface_node = Interface(screen, board, dialogBox)
-        rclpy.spin(interface_node)
+        #Variable que guarda la ventana actual:
+        window = "Menu"
 
-        
-        interface_node.destroy_node()
-        rclpy.shutdown()
-        
-
+        # Ciclo principal del menu:
         running = True
         while running:
-            pygame.display.flip()
-            running = dialogBox.eventListener()
 
+            pygame.display.flip()
+            running,selection = dialogBox.eventListener(window)
+
+            if selection == "Teclas":
+                winTeclas = True
+                window = selection
+            elif selection =="TXT":
+                winTXT = True
+                window = selection
+
+        #Guardamos la respuesta del usuario en un mensaje tipo Bool:
+        answ = False
+        file_path = ""
+
+        if winTeclas:
+            #Pantalla que pregunta si se quiere guardar el recorrido:
+            caption = "Turtle Bot Menu"
+            pregunta = self.createDisplay((menu_screen_width, menu_screen_height),caption)
+
+            #creamos el cuadro de texto para dar indicaciones:
+            InstructionsTextBox = TextBox("¿Desea Guardar el Recorrido?", fuenteMenu, Black, (250, 50))
+
+            #Creamos la lista de botones de la pantalla:
+            buttons = self.createYesNoButtons(fuenteMenu,Grey,Black)
+
+            #Pintamos la escena en la pantalla de pygame creada:
+            dialogBox = DialogBox(menu, buttons, InstructionsTextBox)
+            dialogBox.paintDialog(White,(0,0, 500, 300))
+
+            # Ciclo principal de la pantalla pregunta:
+            running = True
+            while running:
+
+                pygame.display.flip()
+                running,selection = dialogBox.eventListener(window)
+
+                if selection == "Yes":
+                    winTablero = True
+                    window = "Tablero"
+                    #Pasamos el resto de ventanas a falso:
+                    winTeclas = False
+                    winTXT = False
+                    winTablero2 = False
+                    answ = True
+                elif selection == "No":
+                    winTablero2 = True
+                    window = "Tablero"
+                    #Pasamos el resto de ventanas a falso:
+                    winTeclas = False
+                    winTXT = False
+                    winTablero = False
+
+        elif winTXT:
+            #Pantalla que pregunta si se quiere guardar el recorrido:
+            caption = "Turtle Bot Menu"
+            pregunta = self.createDisplay((menu_screen_width, menu_screen_height),caption)
+
+            #creamos el cuadro de texto para dar indicaciones:
+            InstructionsTextBox = TextBox("Seleccione el archivo que contiene el recorrido", fuenteMenu, Black, (250, 50))
+
+            #Creamos la lista de botones de la pantalla:
+            buttons = self.createSelectButton(fuenteMenu,Grey,Black)
+
+            #Pintamos la escena en la pantalla de pygame creada:
+            dialogBox = DialogBox(menu, buttons, InstructionsTextBox)
+            dialogBox.paintDialog(White,(0,0, 500, 300))
+
+            # Ciclo principal de la pantalla pregunta:
+            running = True
+            while running:
+
+                pygame.display.flip()
+                running,selection = dialogBox.eventListener(window)
+
+                if selection == "BuscadorArchivos":
+                    winTablero2 = True
+                    window = "Tablero"
+
+                    #Pasamos el resto de ventanas a falso:
+                    winTeclas = False
+                    winTXT = False
+                    winTablero = False
+
+                    #Abrimos el buscador de archivos para obtener la ruta del archivo:
+                    root = tk.Tk()
+                    root.withdraw()
+                    file_path = filedialog.askopenfilename(
+                        defaultextension=".txt", 
+                        filetypes=[("Archivo TXT", "*.txt")]
+                    )
+                    
+
+        if winTablero or winTablero2:
+
+            #Se crea una nueva pantalla:
+            caption = "Turtle Bot Interface"
+            screen = self.createDisplay((screen_width, screen_height),caption)
+
+            #creamos el cuadro de texto para dar indicaciones:
+            instructionsTextBox = TextBox("Nombre de Archivo:", fuente, Black, (80, 512))
+
+            #creamos el cuadro de texto en el que se va a guardar el nombre de la imagen:
+            nameTextBox = TextBox("", fuente2, Black, (250, 530))
+
+            #Creamos los botones:
+            if winTablero:
+                button = self.createBoardButtons(fuente, Grey, Black,True,Red)
+            else: 
+                button = self.createBoardButtons(fuente, Grey, Black,False)
+
+            #Creamos la lista de plantas y añadimos 4 objetos de tipo planta que recreen las observadas en Coppelia:
+            plants = self.createPlants(Green)
+
+            #creamos el objeto tipo robot y lo inicializamos en el centro de la pantalla:
+            robot = Robot((board_size/2, board_size/2), 20, Red)
+
+            #creamos el onjeto tipo tablero:
+            board = Board(dimension,board_size,White,Grey,plants,robot)
+
+            #Pintamos la escena en la pantalla de pygame creada:
+            board.paint(screen)
+
+            dialogBox = DialogBox(screen, button, instructionsTextBox, nameTextBox)
+            dialogBox.paintDialog(White,(0,500, 500, 80))
+
+            
+            rclpy.init()
+            interface_node = Interface(screen, board, dialogBox,window)
+            if answ:
+                interface_node.CallClient_SaveRoute(answ)
+            if file_path != "":
+                interface_node.CallClient_SaveRoute(file_path)
+            rclpy.spin(interface_node)
+
+            pygame.quit()
+            interface_node.destroy_node()
+            rclpy.shutdown()
+
+        
 
 def main(args=None):
     app = App()
+    pygame.init()
     app.run()
 
 if __name__ == '__main__':

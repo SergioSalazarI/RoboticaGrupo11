@@ -1,0 +1,113 @@
+[0.000000] (-) TimerEvent: {}
+[0.001188] (servicios) JobQueued: {'identifier': 'servicios', 'dependencies': OrderedDict()}
+[0.001308] (turtle_bot_nodos) JobQueued: {'identifier': 'turtle_bot_nodos', 'dependencies': OrderedDict()}
+[0.001396] (servicios) JobStarted: {'identifier': 'servicios'}
+[0.010295] (turtle_bot_nodos) JobStarted: {'identifier': 'turtle_bot_nodos'}
+[0.017532] (servicios) JobProgress: {'identifier': 'servicios', 'progress': 'cmake'}
+[0.018250] (servicios) Command: {'cmd': ['/usr/bin/cmake', '/home/saviveros/RoboticaGrupo11/src/servicios', '-DCMAKE_INSTALL_PREFIX=/home/saviveros/RoboticaGrupo11/install/servicios'], 'cwd': '/home/saviveros/RoboticaGrupo11/build/servicios', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'saviveros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{51855cb2-8cce-5362-8f54-464b92b32386}'), ('HOME', '/home/saviveros'), ('OLDPWD', '/home/saviveros'), ('ROS_PYTHON_VERSION', '3'), ('WSL_DISTRO_NAME', 'Ubuntu'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'saviveros'), ('NAME', 'LAPTOP-RKSLDHDV'), ('WSL_INTEROP', '/run/WSL/3461_interop'), ('PULSE_SERVER', '/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2021b/bin:/mnt/c/Program Files/MATLAB/R2021a/bin:/mnt/c/PROGRA~1/MATLAB/R2020a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('WT_SESSION', 'f99e7a79-20c1-40f8-84bc-a87264c26800'), ('XDG_RUNTIME_DIR', '/mnt/wslg/runtime-dir'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/saviveros/RoboticaGrupo11/build/servicios'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'WT_SESSION::WT_PROFILE_ID'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098799] (-) TimerEvent: {}
+[0.189890] (servicios) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.3.0\n'}
+[0.199001] (-) TimerEvent: {}
+[0.299708] (-) TimerEvent: {}
+[0.400173] (-) TimerEvent: {}
+[0.500590] (-) TimerEvent: {}
+[0.601007] (-) TimerEvent: {}
+[0.684770] (servicios) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.3.0\n'}
+[0.701135] (-) TimerEvent: {}
+[0.801722] (-) TimerEvent: {}
+[0.902510] (-) TimerEvent: {}
+[0.925830] (turtle_bot_nodos) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/turtle_bot_nodos', 'build', '--build-base', '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build', 'install', '--record', '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log', '--single-version-externally-managed'], 'cwd': '/home/saviveros/RoboticaGrupo11/src/turtle_bot_nodos', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'saviveros', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/saviveros', 'OLDPWD': '/home/saviveros', 'ROS_PYTHON_VERSION': '3', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'saviveros', 'NAME': 'LAPTOP-RKSLDHDV', 'WSL_INTEROP': '/run/WSL/3461_interop', 'PULSE_SERVER': '/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2021b/bin:/mnt/c/Program Files/MATLAB/R2021a/bin:/mnt/c/PROGRA~1/MATLAB/R2020a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': 'f99e7a79-20c1-40f8-84bc-a87264c26800', 'XDG_RUNTIME_DIR': '/mnt/wslg/runtime-dir', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/prefix_override:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'HOSTTYPE': 'x86_64', 'WSLENV': 'WT_SESSION::WT_PROFILE_ID'}, 'shell': False}
+[1.002671] (-) TimerEvent: {}
+[1.077161] (servicios) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.102861] (-) TimerEvent: {}
+[1.196147] (turtle_bot_nodos) StdoutLine: {'line': b'running egg_info\n'}
+[1.197060] (turtle_bot_nodos) StdoutLine: {'line': b'creating ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info\n'}
+[1.197288] (turtle_bot_nodos) StdoutLine: {'line': b'writing ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/PKG-INFO\n'}
+[1.197702] (turtle_bot_nodos) StdoutLine: {'line': b'writing dependency_links to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/dependency_links.txt\n'}
+[1.197945] (turtle_bot_nodos) StdoutLine: {'line': b'writing entry points to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/entry_points.txt\n'}
+[1.198419] (turtle_bot_nodos) StdoutLine: {'line': b'writing requirements to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/requires.txt\n'}
+[1.198506] (turtle_bot_nodos) StdoutLine: {'line': b'writing top-level names to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/top_level.txt\n'}
+[1.198566] (turtle_bot_nodos) StdoutLine: {'line': b"writing manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'\n"}
+[1.200125] (turtle_bot_nodos) StdoutLine: {'line': b"reading manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'\n"}
+[1.201119] (turtle_bot_nodos) StdoutLine: {'line': b"writing manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'\n"}
+[1.201282] (turtle_bot_nodos) StdoutLine: {'line': b'running build\n'}
+[1.201388] (turtle_bot_nodos) StdoutLine: {'line': b'running build_py\n'}
+[1.201516] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build\n'}
+[1.202450] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib\n'}
+[1.202673] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.202837] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/turtle_bot_player.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.203002] (-) TimerEvent: {}
+[1.203232] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/turtle_bot_save_route.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.203388] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/turtle_bot_teleop.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.203454] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/turtle_bot_interface.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.203511] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/__init__.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[1.203567] (turtle_bot_nodos) StdoutLine: {'line': b'running install\n'}
+[1.203727] (turtle_bot_nodos) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.203911] (turtle_bot_nodos) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.203979] (turtle_bot_nodos) StdoutLine: {'line': b'running install_lib\n'}
+[1.204458] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.204656] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/turtle_bot_player.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.204840] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/turtle_bot_save_route.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.205017] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/turtle_bot_teleop.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.205240] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/turtle_bot_interface.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.205563] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/__init__.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[1.205999] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/turtle_bot_player.py to turtle_bot_player.cpython-310.pyc\n'}
+[1.207370] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/turtle_bot_save_route.py to turtle_bot_save_route.cpython-310.pyc\n'}
+[1.208050] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/turtle_bot_teleop.py to turtle_bot_teleop.cpython-310.pyc\n'}
+[1.208976] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/turtle_bot_interface.py to turtle_bot_interface.cpython-310.pyc\n'}
+[1.211456] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/__init__.py to __init__.cpython-310.pyc\n'}
+[1.211805] (turtle_bot_nodos) StdoutLine: {'line': b'running install_data\n'}
+[1.212312] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/share/ament_index\n'}
+[1.212510] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/share/ament_index/resource_index\n'}
+[1.212864] (turtle_bot_nodos) StdoutLine: {'line': b'creating /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/share/ament_index/resource_index/packages\n'}
+[1.213071] (turtle_bot_nodos) StdoutLine: {'line': b'copying resource/turtle_bot_nodos -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/share/ament_index/resource_index/packages\n'}
+[1.213405] (turtle_bot_nodos) StdoutLine: {'line': b'copying package.xml -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/share/turtle_bot_nodos\n'}
+[1.213508] (turtle_bot_nodos) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.214760] (turtle_bot_nodos) StdoutLine: {'line': b'Copying ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos-0.0.0-py3.10.egg-info\n'}
+[1.215623] (turtle_bot_nodos) StdoutLine: {'line': b'running install_scripts\n'}
+[1.232500] (servicios) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.239711] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_interface script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[1.240088] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_player script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[1.240436] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_save_route script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[1.240797] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_teleop_ script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[1.240934] (turtle_bot_nodos) StdoutLine: {'line': b"writing list of installed files to '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log'\n"}
+[1.241276] (servicios) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.241678] (servicios) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.242144] (servicios) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.248162] (servicios) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.278357] (turtle_bot_nodos) CommandEnded: {'returncode': 0}
+[1.295486] (turtle_bot_nodos) JobEnded: {'identifier': 'turtle_bot_nodos', 'rc': 0}
+[1.303207] (-) TimerEvent: {}
+[1.403895] (-) TimerEvent: {}
+[1.413489] (servicios) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.420036] (servicios) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.420297] (servicios) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.420509] (servicios) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.422337] (servicios) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.504110] (-) TimerEvent: {}
+[1.595385] (servicios) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter \n'}
+[1.604314] (-) TimerEvent: {}
+[1.673375] (servicios) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.704505] (-) TimerEvent: {}
+[1.804967] (-) TimerEvent: {}
+[1.818526] (servicios) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.822083] (servicios) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.829010] (servicios) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.839449] (servicios) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.856177] (servicios) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.905143] (-) TimerEvent: {}
+[1.966715] (servicios) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.972910] (servicios) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):\n'}
+[1.973378] (servicios) StderrLine: {'line': b"  rosidl_generate_interfaces() the passed file 'srv/SaveRoute.srv' doesn't\n"}
+[1.973486] (servicios) StderrLine: {'line': b'  exist relative to the CMAKE_CURRENT_SOURCE_DIR\n'}
+[1.973583] (servicios) StderrLine: {'line': b"  '/home/saviveros/RoboticaGrupo11/src/servicios'\n"}
+[1.973672] (servicios) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.973728] (servicios) StderrLine: {'line': b'  CMakeLists.txt:13 (rosidl_generate_interfaces)\n'}
+[1.973780] (servicios) StderrLine: {'line': b'\n'}
+[1.973830] (servicios) StderrLine: {'line': b'\x1b[0m\n'}
+[1.973881] (servicios) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[1.973951] (servicios) StdoutLine: {'line': b'See also "/home/saviveros/RoboticaGrupo11/build/servicios/CMakeFiles/CMakeOutput.log".\n'}
+[1.979701] (servicios) CommandEnded: {'returncode': 1}
+[1.994964] (servicios) JobEnded: {'identifier': 'servicios', 'rc': 1}
+[2.005771] (-) TimerEvent: {}
+[2.006863] (-) EventReactorShutdown: {}
