@@ -6,6 +6,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool
 #from servicios.srv import SaveRoute
+from servicios.srv import ReproduceRoute
 from functools import partial
 
 from pynput import keyboard as kb
@@ -125,6 +126,10 @@ class teleop(Node):
             if key.char == 'n' and self.save_route==1:
                 print("[INFO] Se guardo el recorrido.")
                 self.callback_SaveRoute(self.route) 
+            
+            if key.char == 'p' and self.save_route==1:
+                self.get_route()
+                self.callback_get_route()
         except:
             print("Caracter especial no identificado.")
             self.print_instructions()
@@ -145,6 +150,28 @@ class teleop(Node):
         with kb.Listener(on_press=self.on_press,on_release=self.on_release) as listener:
             listener.join()
             
+    def get_route(self):
+        root = tk.Tk()
+        root.withdraw()
+        self.file_path = filedialog.askopenfilename(
+            defaultextension=".txt",
+            filetypes=[("Archivo TXT","*.txt")])
+        print(f"[INFO] Usted selecciono la ruta: {self.file_path}")    
+        
+    def callback_get_route(self):
+        cliente = self.create_client(ReproduceRoute,"/RP")
+        while not cliente.wait_for_service(1.0):
+            self.get_logger().info("---------------")
+        
+        request = ReproduceRoute.Request()
+        request.file_path = self.file_path
+
+        self.future = cliente.call_async(request)
+        rclpy.spin_until_future_complete(self,future=self.future)
+
+        self.estado=self.future.result().ruta
+        self.get_logger().info(self.estado) 
+        self.get_logger().info('Funciona <3 <3 <3') 
         
 
 def main(args=None):
