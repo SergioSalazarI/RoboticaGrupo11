@@ -6,8 +6,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 
-from functools import partial
-
 from pynput import keyboard as kb
 
 import tkinter as tk
