@@ -28,4 +28,6 @@ Es el nodo asignado a la visualización de los algoritmos y funciones realizadas
 
 Para ejecutar el nodo escriba el siguiente comando en su terminal.
 
-<code>ros2 run turtle_bot_nodos turtle_bot_interface </code>
+```
+ros2 run turtle_bot_nodos turtle_bot_interface
+```
