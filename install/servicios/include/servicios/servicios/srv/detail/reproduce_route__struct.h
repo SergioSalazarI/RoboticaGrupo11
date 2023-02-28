@@ -41,14 +41,14 @@ typedef struct servicios__srv__ReproduceRoute_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'ruta'
+// Member 'result'
 // already included above
 // #include "rosidl_runtime_c/string.h"
 
 /// Struct defined in srv/ReproduceRoute in the package servicios.
 typedef struct servicios__srv__ReproduceRoute_Response
 {
-  rosidl_runtime_c__String ruta;
+  rosidl_runtime_c__String result;
 } servicios__srv__ReproduceRoute_Response;
 
 // Struct for a sequence of servicios__srv__ReproduceRoute_Response.

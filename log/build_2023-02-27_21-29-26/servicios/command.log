@@ -1,0 +1,4 @@
+Invoking command in '/home/saviveros/RoboticaGrupo11/build/servicios': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/saviveros/RoboticaGrupo11/build/servicios -- -j8 -l8
+Invoked command in '/home/saviveros/RoboticaGrupo11/build/servicios' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/saviveros/RoboticaGrupo11/build/servicios -- -j8 -l8
+Invoking command in '/home/saviveros/RoboticaGrupo11/build/servicios': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/saviveros/RoboticaGrupo11/build/servicios
+Invoked command in '/home/saviveros/RoboticaGrupo11/build/servicios' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/saviveros/RoboticaGrupo11/build/servicios

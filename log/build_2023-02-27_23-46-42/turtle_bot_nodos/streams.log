@@ -1,0 +1,26 @@
+[1.004s] Invoking command in '/home/saviveros/RoboticaGrupo11/src/turtle_bot_nodos': PYTHONPATH=/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/prefix_override:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtle_bot_nodos build --build-base /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build install --record /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log --single-version-externally-managed
+[1.236s] running egg_info
+[1.238s] writing ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/PKG-INFO
+[1.238s] writing dependency_links to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/dependency_links.txt
+[1.238s] writing entry points to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/entry_points.txt
+[1.239s] writing requirements to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/requires.txt
+[1.239s] writing top-level names to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/top_level.txt
+[1.240s] reading manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'
+[1.241s] writing manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'
+[1.241s] running build
+[1.241s] running build_py
+[1.241s] running install
+[1.242s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.242s]   warnings.warn(
+[1.242s] running install_lib
+[1.243s] running install_data
+[1.244s] running install_egg_info
+[1.249s] removing '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos-0.0.0-py3.10.egg-info' (and everything under it)
+[1.250s] Copying ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos-0.0.0-py3.10.egg-info
+[1.252s] running install_scripts
+[1.278s] Installing turtle_bot_interface script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos
+[1.278s] Installing turtle_bot_player script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos
+[1.278s] Installing turtle_bot_save_route script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos
+[1.278s] Installing turtle_bot_teleop_ script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos
+[1.279s] writing list of installed files to '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log'
+[1.305s] Invoked command in '/home/saviveros/RoboticaGrupo11/src/turtle_bot_nodos' returned '0': PYTHONPATH=/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/prefix_override:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/turtle_bot_nodos build --build-base /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build install --record /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log --single-version-externally-managed

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergio/turtle_bot_11/src/servicios
+CMAKE_SOURCE_DIR = /home/saviveros/RoboticaGrupo11/src/servicios
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergio/turtle_bot_11/build/servicios
+CMAKE_BINARY_DIR = /home/saviveros/RoboticaGrupo11/build/servicios
 
 # Utility rule file for ament_cmake_python_build_servicios_egg.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_servicios_egg.dir/compiler_depend.ma
 include CMakeFiles/ament_cmake_python_build_servicios_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_servicios_egg:
-	cd /home/sergio/turtle_bot_11/build/servicios/ament_cmake_python/servicios && /usr/bin/python3.10 setup.py egg_info
+	cd /home/saviveros/RoboticaGrupo11/build/servicios/ament_cmake_python/servicios && /usr/bin/python3.10 setup.py egg_info
 
 ament_cmake_python_build_servicios_egg: CMakeFiles/ament_cmake_python_build_servicios_egg
 ament_cmake_python_build_servicios_egg: CMakeFiles/ament_cmake_python_build_servicios_egg.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_build_servicios_egg.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_build_servicios_egg.dir/clean
 
 CMakeFiles/ament_cmake_python_build_servicios_egg.dir/depend:
-	cd /home/sergio/turtle_bot_11/build/servicios && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sergio/turtle_bot_11/src/servicios /home/sergio/turtle_bot_11/src/servicios /home/sergio/turtle_bot_11/build/servicios /home/sergio/turtle_bot_11/build/servicios /home/sergio/turtle_bot_11/build/servicios/CMakeFiles/ament_cmake_python_build_servicios_egg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/saviveros/RoboticaGrupo11/build/servicios && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/saviveros/RoboticaGrupo11/src/servicios /home/saviveros/RoboticaGrupo11/src/servicios /home/saviveros/RoboticaGrupo11/build/servicios /home/saviveros/RoboticaGrupo11/build/servicios /home/saviveros/RoboticaGrupo11/build/servicios/CMakeFiles/ament_cmake_python_build_servicios_egg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ament_cmake_python_build_servicios_egg.dir/depend
 

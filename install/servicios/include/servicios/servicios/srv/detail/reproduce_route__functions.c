@@ -251,7 +251,7 @@ servicios__srv__ReproduceRoute_Request__Sequence__copy(
 
 
 // Include directives for member types
-// Member `ruta`
+// Member `result`
 // already included above
 // #include "rosidl_runtime_c/string_functions.h"
 
@@ -261,8 +261,8 @@ servicios__srv__ReproduceRoute_Response__init(servicios__srv__ReproduceRoute_Res
   if (!msg) {
     return false;
   }
-  // ruta
-  if (!rosidl_runtime_c__String__init(&msg->ruta)) {
+  // result
+  if (!rosidl_runtime_c__String__init(&msg->result)) {
     servicios__srv__ReproduceRoute_Response__fini(msg);
     return false;
   }
@@ -275,8 +275,8 @@ servicios__srv__ReproduceRoute_Response__fini(servicios__srv__ReproduceRoute_Res
   if (!msg) {
     return;
   }
-  // ruta
-  rosidl_runtime_c__String__fini(&msg->ruta);
+  // result
+  rosidl_runtime_c__String__fini(&msg->result);
 }
 
 bool
@@ -285,9 +285,9 @@ servicios__srv__ReproduceRoute_Response__are_equal(const servicios__srv__Reprodu
   if (!lhs || !rhs) {
     return false;
   }
-  // ruta
+  // result
   if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->ruta), &(rhs->ruta)))
+      &(lhs->result), &(rhs->result)))
   {
     return false;
   }
@@ -302,9 +302,9 @@ servicios__srv__ReproduceRoute_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // ruta
+  // result
   if (!rosidl_runtime_c__String__copy(
-      &(input->ruta), &(output->ruta)))
+      &(input->result), &(output->result)))
   {
     return false;
   }

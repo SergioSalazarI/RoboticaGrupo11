@@ -105,7 +105,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
-// Member `ruta`
+// Member `result`
 // already included above
 // #include "rosidl_runtime_c/string_functions.h"
 
@@ -130,14 +130,14 @@ void servicios__srv__ReproduceRoute_Response__rosidl_typesupport_introspection_c
 
 static rosidl_typesupport_introspection_c__MessageMember servicios__srv__ReproduceRoute_Response__rosidl_typesupport_introspection_c__ReproduceRoute_Response_message_member_array[1] = {
   {
-    "ruta",  // name
+    "result",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(servicios__srv__ReproduceRoute_Response, ruta),  // bytes offset in struct
+    offsetof(servicios__srv__ReproduceRoute_Response, result),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

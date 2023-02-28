@@ -9,7 +9,7 @@ module servicios {
       string file_path;
     };
     struct ReproduceRoute_Response {
-      string ruta;
+      string result;
     };
   };
 };

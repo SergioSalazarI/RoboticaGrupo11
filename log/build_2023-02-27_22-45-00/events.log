@@ -1,0 +1,259 @@
+[0.000000] (-) TimerEvent: {}
+[0.001122] (servicios) JobQueued: {'identifier': 'servicios', 'dependencies': OrderedDict()}
+[0.001222] (turtle_bot_nodos) JobQueued: {'identifier': 'turtle_bot_nodos', 'dependencies': OrderedDict()}
+[0.001310] (servicios) JobStarted: {'identifier': 'servicios'}
+[0.036073] (turtle_bot_nodos) JobStarted: {'identifier': 'turtle_bot_nodos'}
+[0.082039] (servicios) JobProgress: {'identifier': 'servicios', 'progress': 'cmake'}
+[0.083604] (servicios) JobProgress: {'identifier': 'servicios', 'progress': 'build'}
+[0.085103] (servicios) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/saviveros/RoboticaGrupo11/build/servicios', '--', '-j8', '-l8'], 'cwd': '/home/saviveros/RoboticaGrupo11/build/servicios', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'saviveros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/saviveros/RoboticaGrupo11/install/servicios/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/saviveros'), ('OLDPWD', '/home/saviveros'), ('ROS_PYTHON_VERSION', '3'), ('WSL_DISTRO_NAME', 'Ubuntu'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'saviveros'), ('NAME', 'LAPTOP-RKSLDHDV'), ('WSL_INTEROP', '/run/WSL/1425_interop'), ('PULSE_SERVER', '/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts/pytesseract.exe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2021b/bin:/mnt/c/Program Files/MATLAB/R2021a/bin:/mnt/c/PROGRA~1/MATLAB/R2020a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Lib/site-packages/tesseract:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/mnt/wslg/runtime-dir'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos:/home/saviveros/RoboticaGrupo11/install/servicios:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/saviveros/RoboticaGrupo11/build/servicios'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install/servicios:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos:/opt/ros/humble'), ('WSLENV', '')]), 'shell': False}
+[0.104609] (-) TimerEvent: {}
+[0.207434] (-) TimerEvent: {}
+[0.308673] (-) TimerEvent: {}
+[0.410019] (-) TimerEvent: {}
+[0.514080] (-) TimerEvent: {}
+[0.614994] (-) TimerEvent: {}
+[0.716026] (-) TimerEvent: {}
+[0.816798] (-) TimerEvent: {}
+[0.917888] (-) TimerEvent: {}
+[1.018656] (-) TimerEvent: {}
+[1.073497] (servicios) StdoutLine: {'line': b'[  2%] Built target servicios__cpp\n'}
+[1.076450] (servicios) StdoutLine: {'line': b'[ 12%] Built target servicios__rosidl_generator_c\n'}
+[1.076971] (servicios) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_servicios\n'}
+[1.077244] (servicios) StdoutLine: {'line': b'[ 23%] Built target servicios__rosidl_typesupport_cpp\n'}
+[1.077413] (servicios) StdoutLine: {'line': b'[ 40%] Built target servicios__rosidl_typesupport_fastrtps_cpp\n'}
+[1.077589] (servicios) StdoutLine: {'line': b'[ 44%] Built target servicios__rosidl_typesupport_fastrtps_c\n'}
+[1.077739] (servicios) StdoutLine: {'line': b'[ 55%] Built target servicios__rosidl_typesupport_introspection_cpp\n'}
+[1.077985] (servicios) StdoutLine: {'line': b'[ 65%] Built target servicios__rosidl_typesupport_introspection_c\n'}
+[1.078134] (servicios) StdoutLine: {'line': b'[ 76%] Built target servicios__rosidl_typesupport_c\n'}
+[1.078318] (servicios) StdoutLine: {'line': b'[ 76%] Built target servicios\n'}
+[1.078509] (servicios) StdoutLine: {'line': b'[ 78%] Built target servicios__py\n'}
+[1.078644] (servicios) StdoutLine: {'line': b'[ 87%] Built target servicios__rosidl_generator_py\n'}
+[1.078766] (servicios) StdoutLine: {'line': b'[ 91%] Built target servicios__rosidl_typesupport_introspection_c__pyext\n'}
+[1.078907] (servicios) StdoutLine: {'line': b'[ 95%] Built target servicios__rosidl_typesupport_c__pyext\n'}
+[1.079918] (servicios) StdoutLine: {'line': b'[100%] Built target servicios__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.118778] (-) TimerEvent: {}
+[1.211334] (servicios) StdoutLine: {'line': b'running egg_info\n'}
+[1.213454] (servicios) StdoutLine: {'line': b'writing servicios.egg-info/PKG-INFO\n'}
+[1.214063] (servicios) StdoutLine: {'line': b'writing dependency_links to servicios.egg-info/dependency_links.txt\n'}
+[1.214407] (servicios) StdoutLine: {'line': b'writing top-level names to servicios.egg-info/top_level.txt\n'}
+[1.219761] (-) TimerEvent: {}
+[1.221433] (servicios) StdoutLine: {'line': b"reading manifest file 'servicios.egg-info/SOURCES.txt'\n"}
+[1.222425] (servicios) StdoutLine: {'line': b"writing manifest file 'servicios.egg-info/SOURCES.txt'\n"}
+[1.310261] (servicios) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_servicios_egg\n'}
+[1.319974] (-) TimerEvent: {}
+[1.334134] (servicios) CommandEnded: {'returncode': 0}
+[1.420158] (-) TimerEvent: {}
+[1.520663] (-) TimerEvent: {}
+[1.538988] (servicios) JobProgress: {'identifier': 'servicios', 'progress': 'install'}
+[1.552572] (servicios) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/saviveros/RoboticaGrupo11/build/servicios'], 'cwd': '/home/saviveros/RoboticaGrupo11/build/servicios', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'saviveros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/saviveros/RoboticaGrupo11/install/servicios/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/saviveros'), ('OLDPWD', '/home/saviveros'), ('ROS_PYTHON_VERSION', '3'), ('WSL_DISTRO_NAME', 'Ubuntu'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'saviveros'), ('NAME', 'LAPTOP-RKSLDHDV'), ('WSL_INTEROP', '/run/WSL/1425_interop'), ('PULSE_SERVER', '/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts/pytesseract.exe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2021b/bin:/mnt/c/Program Files/MATLAB/R2021a/bin:/mnt/c/PROGRA~1/MATLAB/R2020a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Lib/site-packages/tesseract:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/mnt/wslg/runtime-dir'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos:/home/saviveros/RoboticaGrupo11/install/servicios:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/saviveros/RoboticaGrupo11/build/servicios'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/saviveros/RoboticaGrupo11/install/servicios:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos:/opt/ros/humble'), ('WSLENV', '')]), 'shell': False}
+[1.567653] (servicios) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.568168] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/rosidl_interfaces/servicios\n'}
+[1.568765] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.569152] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.569566] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/end.h\n'}
+[1.569810] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/reproduce_route.h\n'}
+[1.569947] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/save.h\n'}
+[1.570075] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.570205] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__functions.c\n'}
+[1.577801] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.h\n'}
+[1.579284] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__functions.c\n'}
+[1.581135] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__functions.c\n'}
+[1.582444] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__functions.h\n'}
+[1.583059] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.h\n'}
+[1.585146] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__struct.h\n'}
+[1.585417] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__functions.h\n'}
+[1.585621] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.h\n'}
+[1.585792] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__functions.h\n'}
+[1.585968] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__struct.h\n'}
+[1.586141] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__struct.h\n'}
+[1.586359] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg\n'}
+[1.586517] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_generator_c__visibility_control.h\n'}
+[1.586639] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/library_path.sh\n'}
+[1.586759] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/library_path.dsv\n'}
+[1.586873] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_generator_c.so\n'}
+[1.587030] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.587211] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.587497] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.587609] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_fastrtps_c.h\n'}
+[1.587691] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_fastrtps_c.h\n'}
+[1.587790] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_fastrtps_c.h\n'}
+[1.587967] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg\n'}
+[1.588103] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[1.588247] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_fastrtps_c.so\n'}
+[1.588381] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.588600] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.588809] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/reproduce_route.hpp\n'}
+[1.588945] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/save.hpp\n'}
+[1.589069] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/end.hpp\n'}
+[1.589195] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.589316] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__struct.hpp\n'}
+[1.589442] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__builder.hpp\n'}
+[1.589604] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__builder.hpp\n'}
+[1.590358] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__traits.hpp\n'}
+[1.598328] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__builder.hpp\n'}
+[1.600600] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__traits.hpp\n'}
+[1.600846] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__struct.hpp\n'}
+[1.601029] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__struct.hpp\n'}
+[1.601189] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__traits.hpp\n'}
+[1.601373] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.601532] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.601698] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.601847] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.602003] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.602163] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/dds_fastrtps\n'}
+[1.602316] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.602472] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg\n'}
+[1.602629] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[1.602790] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_fastrtps_cpp.so\n'}
+[1.602947] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.603198] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.603386] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.603544] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_introspection_c.h\n'}
+[1.603700] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_introspection_c.h\n'}
+[1.603868] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_introspection_c.h\n'}
+[1.604033] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.c\n'}
+[1.604234] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.c\n'}
+[1.604395] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.c\n'}
+[1.604549] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg\n'}
+[1.604702] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[1.604869] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_introspection_c.so\n'}
+[1.605034] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_c.so\n'}
+[1.605196] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios\n'}
+[1.605354] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv\n'}
+[1.605511] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail\n'}
+[1.605685] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.605873] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.606036] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.cpp\n'}
+[1.606193] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.cpp\n'}
+[1.606350] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.cpp\n'}
+[1.606519] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.606675] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_introspection_cpp.so\n'}
+[1.606894] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_cpp.so\n'}
+[1.607054] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/pythonpath.sh\n'}
+[1.607220] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/pythonpath.dsv\n'}
+[1.607397] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info\n'}
+[1.607559] (servicios) StdoutLine: {'line': b'-- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[1.607705] (servicios) StdoutLine: {'line': b'-- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[1.607853] (servicios) StdoutLine: {'line': b'-- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[1.607995] (servicios) StdoutLine: {'line': b'-- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[1.608143] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios\n'}
+[1.608291] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv\n'}
+[1.608513] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_reproduce_route.py\n'}
+[1.608698] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_end_s.c\n'}
+[1.608853] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_reproduce_route_s.c\n'}
+[1.608997] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_save_s.c\n'}
+[1.609148] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_end.py\n'}
+[1.609288] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_save.py\n'}
+[1.609500] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/__init__.py\n'}
+[1.609680] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.609826] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.609953] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[1.610104] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.610242] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/libservicios__rosidl_generator_py.so\n'}
+[1.610387] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_c.c\n'}
+[1.610532] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/__init__.py\n'}
+[1.611971] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[1.620857] (-) TimerEvent: {}
+[1.672858] (servicios) StdoutLine: {'line': b"Listing '/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios'...\n"}
+[1.673342] (servicios) StdoutLine: {'line': b"Listing '/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv'...\n"}
+[1.690369] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.691095] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.691788] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.692442] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_generator_py.so\n'}
+[1.692663] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute.idl\n'}
+[1.693103] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save.idl\n'}
+[1.693757] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End.idl\n'}
+[1.694428] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute.srv\n'}
+[1.695063] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute_Request.msg\n'}
+[1.695530] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute_Response.msg\n'}
+[1.696069] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save.srv\n'}
+[1.697033] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save_Request.msg\n'}
+[1.697433] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save_Response.msg\n'}
+[1.697954] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End.srv\n'}
+[1.698135] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End_Request.msg\n'}
+[1.698298] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End_Response.msg\n'}
+[1.698488] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/package_run_dependencies/servicios\n'}
+[1.698645] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/parent_prefix_path/servicios\n'}
+[1.698802] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/ament_prefix_path.sh\n'}
+[1.698956] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/ament_prefix_path.dsv\n'}
+[1.699105] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/path.sh\n'}
+[1.699260] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/path.dsv\n'}
+[1.699426] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.bash\n'}
+[1.699575] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.sh\n'}
+[1.699711] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.zsh\n'}
+[1.699837] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.dsv\n'}
+[1.699970] (servicios) StdoutLine: {'line': b'-- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/package.dsv\n'}
+[1.700103] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/packages/servicios\n'}
+[1.700251] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cExport.cmake\n'}
+[1.700403] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.701463] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[1.702108] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[1.702350] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cppExport.cmake\n'}
+[1.702742] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[1.703503] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[1.709545] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.710233] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.710685] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cExport.cmake\n'}
+[1.711258] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.712338] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.712823] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.713227] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cppExport.cmake\n'}
+[1.713624] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.714036] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_pyExport.cmake\n'}
+[1.714435] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_pyExport-noconfig.cmake\n'}
+[1.714829] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake-extras.cmake\n'}
+[1.715196] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.715513] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.715710] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.715913] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.716031] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.716118] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.716212] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/serviciosConfig.cmake\n'}
+[1.716367] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/serviciosConfig-version.cmake\n'}
+[1.716502] (servicios) StdoutLine: {'line': b'-- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/package.xml\n'}
+[1.716633] (servicios) CommandEnded: {'returncode': 0}
+[1.721529] (-) TimerEvent: {}
+[1.824198] (-) TimerEvent: {}
+[1.924923] (-) TimerEvent: {}
+[2.029396] (-) TimerEvent: {}
+[2.039066] (servicios) JobEnded: {'identifier': 'servicios', 'rc': 0}
+[2.129549] (-) TimerEvent: {}
+[2.230243] (-) TimerEvent: {}
+[2.331429] (-) TimerEvent: {}
+[2.333969] (turtle_bot_nodos) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/turtle_bot_nodos', 'build', '--build-base', '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build', 'install', '--record', '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log', '--single-version-externally-managed'], 'cwd': '/home/saviveros/RoboticaGrupo11/src/turtle_bot_nodos', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'saviveros', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/saviveros/RoboticaGrupo11/install/servicios/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/saviveros', 'OLDPWD': '/home/saviveros', 'ROS_PYTHON_VERSION': '3', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/saviveros/RoboticaGrupo11/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'saviveros', 'NAME': 'LAPTOP-RKSLDHDV', 'WSL_INTEROP': '/run/WSL/1425_interop', 'PULSE_SERVER': '/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Scripts/pytesseract.exe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/MATLAB/R2021b/bin:/mnt/c/Program Files/MATLAB/R2021a/bin:/mnt/c/PROGRA~1/MATLAB/R2020a/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/sophy/AppData/Local/Programs/Python/Python310/Lib/site-packages/tesseract:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sophy/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/mnt/wslg/runtime-dir', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos:/home/saviveros/RoboticaGrupo11/install/servicios:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/prefix_override:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages:/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/saviveros/RoboticaGrupo11/install/servicios', 'WSLENV': ''}, 'shell': False}
+[2.431638] (-) TimerEvent: {}
+[2.532395] (-) TimerEvent: {}
+[2.634024] (-) TimerEvent: {}
+[2.734554] (-) TimerEvent: {}
+[2.825384] (turtle_bot_nodos) StdoutLine: {'line': b'running egg_info\n'}
+[2.827926] (turtle_bot_nodos) StdoutLine: {'line': b'writing ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/PKG-INFO\n'}
+[2.828492] (turtle_bot_nodos) StdoutLine: {'line': b'writing dependency_links to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/dependency_links.txt\n'}
+[2.828920] (turtle_bot_nodos) StdoutLine: {'line': b'writing entry points to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/entry_points.txt\n'}
+[2.829221] (turtle_bot_nodos) StdoutLine: {'line': b'writing requirements to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/requires.txt\n'}
+[2.829669] (turtle_bot_nodos) StdoutLine: {'line': b'writing top-level names to ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/top_level.txt\n'}
+[2.832136] (turtle_bot_nodos) StdoutLine: {'line': b"reading manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'\n"}
+[2.834003] (turtle_bot_nodos) StdoutLine: {'line': b"writing manifest file '../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info/SOURCES.txt'\n"}
+[2.834493] (turtle_bot_nodos) StdoutLine: {'line': b'running build\n'}
+[2.834606] (-) TimerEvent: {}
+[2.834988] (turtle_bot_nodos) StdoutLine: {'line': b'running build_py\n'}
+[2.835190] (turtle_bot_nodos) StdoutLine: {'line': b'copying turtle_bot_nodos/turtle_bot_teleop.py -> /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos\n'}
+[2.835555] (turtle_bot_nodos) StdoutLine: {'line': b'running install\n'}
+[2.835985] (turtle_bot_nodos) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[2.836190] (turtle_bot_nodos) StderrLine: {'line': b'  warnings.warn(\n'}
+[2.836997] (turtle_bot_nodos) StdoutLine: {'line': b'running install_lib\n'}
+[2.838062] (turtle_bot_nodos) StdoutLine: {'line': b'copying /home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/build/lib/turtle_bot_nodos/turtle_bot_teleop.py -> /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos\n'}
+[2.838921] (turtle_bot_nodos) StdoutLine: {'line': b'byte-compiling /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos/turtle_bot_teleop.py to turtle_bot_teleop.cpython-310.pyc\n'}
+[2.840837] (turtle_bot_nodos) StdoutLine: {'line': b'running install_data\n'}
+[2.841775] (turtle_bot_nodos) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.844442] (turtle_bot_nodos) StdoutLine: {'line': b"removing '/home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[2.844920] (turtle_bot_nodos) StdoutLine: {'line': b'Copying ../../build/turtle_bot_nodos/turtle_bot_nodos.egg-info to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/python3.10/site-packages/turtle_bot_nodos-0.0.0-py3.10.egg-info\n'}
+[2.846342] (turtle_bot_nodos) StdoutLine: {'line': b'running install_scripts\n'}
+[2.917871] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_interface script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[2.918398] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_player script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[2.918831] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_save_route script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[2.919381] (turtle_bot_nodos) StdoutLine: {'line': b'Installing turtle_bot_teleop_ script to /home/saviveros/RoboticaGrupo11/install/turtle_bot_nodos/lib/turtle_bot_nodos\n'}
+[2.919566] (turtle_bot_nodos) StdoutLine: {'line': b"writing list of installed files to '/home/saviveros/RoboticaGrupo11/build/turtle_bot_nodos/install.log'\n"}
+[2.934833] (-) TimerEvent: {}
+[2.985991] (turtle_bot_nodos) CommandEnded: {'returncode': 0}
+[3.018995] (turtle_bot_nodos) JobEnded: {'identifier': 'turtle_bot_nodos', 'rc': 0}
+[3.021301] (-) EventReactorShutdown: {}

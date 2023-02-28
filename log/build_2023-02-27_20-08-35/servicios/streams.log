@@ -1,0 +1,201 @@
+[0.030s] Invoking command in '/home/saviveros/RoboticaGrupo11/build/servicios': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/saviveros/RoboticaGrupo11/build/servicios -- -j8 -l8
+[0.102s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_generator_c[0m
+[0.118s] [  2%] Built target servicios__cpp
+[0.120s] [ 12%] Built target servicios__rosidl_generator_c
+[0.138s] [ 12%] Built target ament_cmake_python_copy_servicios
+[0.152s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_fastrtps_cpp[0m
+[0.153s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_introspection_c[0m
+[0.160s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_introspection_cpp[0m
+[0.160s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_cpp[0m
+[0.161s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_fastrtps_c[0m
+[0.172s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_c[0m
+[0.200s] [ 23%] Built target servicios__rosidl_typesupport_introspection_c
+[0.205s] [ 34%] Built target servicios__rosidl_typesupport_introspection_cpp
+[0.211s] [ 59%] Built target servicios__rosidl_typesupport_fastrtps_cpp
+[0.211s] [ 59%] Built target servicios__rosidl_typesupport_fastrtps_c
+[0.212s] [ 65%] Built target servicios__rosidl_typesupport_c
+[0.213s] [ 76%] Built target servicios__rosidl_typesupport_cpp
+[0.244s] [ 76%] Built target servicios
+[0.278s] [ 78%] Built target servicios__py
+[0.295s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_generator_py[0m
+[0.319s] [ 87%] Built target servicios__rosidl_generator_py
+[0.333s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.333s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_c__pyext[0m
+[0.334s] [35m[1mConsolidate compiler generated dependencies of target servicios__rosidl_typesupport_introspection_c__pyext[0m
+[0.355s] [ 91%] Built target servicios__rosidl_typesupport_introspection_c__pyext
+[0.356s] [ 95%] Built target servicios__rosidl_typesupport_c__pyext
+[0.357s] [100%] Built target servicios__rosidl_typesupport_fastrtps_c__pyext
+[0.584s] running egg_info
+[0.585s] writing servicios.egg-info/PKG-INFO
+[0.586s] writing dependency_links to servicios.egg-info/dependency_links.txt
+[0.586s] writing top-level names to servicios.egg-info/top_level.txt
+[0.592s] reading manifest file 'servicios.egg-info/SOURCES.txt'
+[0.594s] writing manifest file 'servicios.egg-info/SOURCES.txt'
+[0.645s] [100%] Built target ament_cmake_python_build_servicios_egg
+[0.664s] Invoked command in '/home/saviveros/RoboticaGrupo11/build/servicios' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/saviveros/RoboticaGrupo11/build/servicios -- -j8 -l8
+[0.815s] Invoking command in '/home/saviveros/RoboticaGrupo11/build/servicios': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/saviveros/RoboticaGrupo11/build/servicios
+[0.824s] -- Install configuration: ""
+[0.825s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/rosidl_interfaces/servicios
+[0.825s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.826s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.826s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/end.h
+[0.826s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/reproduce_route.h
+[0.827s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/save.h
+[0.828s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.828s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__functions.c
+[0.828s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.h
+[0.829s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__functions.c
+[0.829s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__functions.c
+[0.829s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__functions.h
+[0.829s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.h
+[0.829s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__struct.h
+[0.830s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__functions.h
+[0.830s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.h
+[0.830s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__functions.h
+[0.830s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__struct.h
+[0.830s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__struct.h
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_generator_c__visibility_control.h
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/library_path.sh
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/library_path.dsv
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_generator_c.so
+[0.831s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_fastrtps_c.h
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_fastrtps_c.h
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_fastrtps_c.h
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_fastrtps_c.so
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.832s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/reproduce_route.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/save.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/end.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__struct.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__builder.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__builder.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__traits.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__builder.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__traits.hpp
+[0.833s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__struct.hpp
+[0.834s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__struct.hpp
+[0.834s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__traits.hpp
+[0.843s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.845s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.845s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.845s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_fastrtps_cpp.hpp
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_fastrtps_cpp.hpp
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/dds_fastrtps
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_fastrtps_cpp.hpp
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_fastrtps_cpp.so
+[0.846s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.847s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.847s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.848s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_introspection_c.h
+[0.849s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_introspection_c.h
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_introspection_c.h
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.c
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.c
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.c
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_introspection_c.so
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_c.so
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__rosidl_typesupport_introspection_cpp.hpp
+[0.850s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__rosidl_typesupport_introspection_cpp.hpp
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/end__type_support.cpp
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__type_support.cpp
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/reproduce_route__type_support.cpp
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/include/servicios/servicios/srv/detail/save__rosidl_typesupport_introspection_cpp.hpp
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_introspection_cpp.so
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_typesupport_cpp.so
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/pythonpath.sh
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/pythonpath.dsv
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info
+[0.851s] -- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/top_level.txt
+[0.851s] -- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.851s] -- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.851s] -- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios-0.0.0-py3.10.egg-info/PKG-INFO
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv
+[0.851s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_reproduce_route.py
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_end_s.c
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_reproduce_route_s.c
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_save_s.c
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_end.py
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/_save.py
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv/__init__.py
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_introspection_c.c
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/libservicios__rosidl_generator_py.so
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_c.c
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/__init__.py
+[0.852s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/_servicios_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.892s] Listing '/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios'...
+[0.892s] Listing '/home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/srv'...
+[0.898s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.898s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.899s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/local/lib/python3.10/dist-packages/servicios/servicios_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.899s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/lib/libservicios__rosidl_generator_py.so
+[0.900s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute.idl
+[0.900s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save.idl
+[0.900s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End.idl
+[0.901s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute.srv
+[0.901s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute_Request.msg
+[0.902s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/ReproduceRoute_Response.msg
+[0.902s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save.srv
+[0.902s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save_Request.msg
+[0.902s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/Save_Response.msg
+[0.903s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End.srv
+[0.903s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End_Request.msg
+[0.903s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/srv/End_Response.msg
+[0.904s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/package_run_dependencies/servicios
+[0.904s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/parent_prefix_path/servicios
+[0.904s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/ament_prefix_path.sh
+[0.905s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/ament_prefix_path.dsv
+[0.905s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/path.sh
+[0.905s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/environment/path.dsv
+[0.906s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.bash
+[0.906s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.sh
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.zsh
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/local_setup.dsv
+[0.907s] -- Installing: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/package.dsv
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/ament_index/resource_index/packages/servicios
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cExport.cmake
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cExport-noconfig.cmake
+[0.907s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cExport.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_cppExport.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cExport.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cExport.cmake
+[0.908s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cExport-noconfig.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cppExport.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cppExport.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/servicios__rosidl_typesupport_cppExport-noconfig.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_pyExport.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/export_servicios__rosidl_generator_pyExport-noconfig.cmake
+[0.909s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake-extras.cmake
+[0.910s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.910s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.910s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_libraries-extras.cmake
+[0.911s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/ament_cmake_export_targets-extras.cmake
+[0.911s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.911s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.912s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/serviciosConfig.cmake
+[0.912s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/cmake/serviciosConfig-version.cmake
+[0.912s] -- Up-to-date: /home/saviveros/RoboticaGrupo11/install/servicios/share/servicios/package.xml
+[0.924s] Invoked command in '/home/saviveros/RoboticaGrupo11/build/servicios' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/saviveros/RoboticaGrupo11/build/servicios

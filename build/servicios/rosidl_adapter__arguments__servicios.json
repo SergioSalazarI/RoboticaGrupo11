@@ -1,6 +1,8 @@
 {
   "package_name": "servicios",
   "non_idl_tuples": [
-    "/home/sergio/turtle_bot_11/src/servicios:srv/ReproduceRoute.srv"
+    "/home/saviveros/RoboticaGrupo11/src/servicios:srv/ReproduceRoute.srv",
+    "/home/saviveros/RoboticaGrupo11/src/servicios:srv/Save.srv",
+    "/home/saviveros/RoboticaGrupo11/src/servicios:srv/End.srv"
   ]
 }

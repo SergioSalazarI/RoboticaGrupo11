@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergio/turtle_bot_11/src/servicios
+CMAKE_SOURCE_DIR = /home/saviveros/RoboticaGrupo11/src/servicios
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergio/turtle_bot_11/build/servicios
+CMAKE_BINARY_DIR = /home/saviveros/RoboticaGrupo11/build/servicios
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/sergio/turtle_bot_11/build/servicios && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sergio/turtle_bot_11/src/servicios /home/sergio/turtle_bot_11/src/servicios /home/sergio/turtle_bot_11/build/servicios /home/sergio/turtle_bot_11/build/servicios /home/sergio/turtle_bot_11/build/servicios/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/saviveros/RoboticaGrupo11/build/servicios && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/saviveros/RoboticaGrupo11/src/servicios /home/saviveros/RoboticaGrupo11/src/servicios /home/saviveros/RoboticaGrupo11/build/servicios /home/saviveros/RoboticaGrupo11/build/servicios /home/saviveros/RoboticaGrupo11/build/servicios/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

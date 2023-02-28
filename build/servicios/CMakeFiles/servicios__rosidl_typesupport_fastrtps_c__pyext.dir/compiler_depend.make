@@ -247,8 +247,18 @@ CMakeFiles/servicios__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_
   rosidl_generator_c/servicios/srv/detail/reproduce_route__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/servicios/srv/detail/reproduce_route__functions.h
+  rosidl_generator_c/servicios/srv/detail/reproduce_route__functions.h \
+  rosidl_generator_c/servicios/srv/detail/save__type_support.h \
+  rosidl_generator_c/servicios/srv/detail/save__struct.h \
+  rosidl_generator_c/servicios/srv/detail/save__functions.h \
+  rosidl_generator_c/servicios/srv/detail/end__type_support.h \
+  rosidl_generator_c/servicios/srv/detail/end__struct.h \
+  rosidl_generator_c/servicios/srv/detail/end__functions.h
 
+
+rosidl_generator_c/servicios/srv/detail/end__struct.h:
+
+rosidl_generator_c/servicios/srv/detail/save__struct.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
 
@@ -506,6 +516,8 @@ rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
+rosidl_generator_c/servicios/srv/detail/end__functions.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
@@ -541,6 +553,8 @@ rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+rosidl_generator_c/servicios/srv/detail/save__type_support.h:
 
 /usr/include/python3.10/genobject.h:
 
@@ -619,6 +633,8 @@ rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
+
+rosidl_generator_c/servicios/srv/detail/end__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -699,6 +715,8 @@ rosidl_generator_c/servicios/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+rosidl_generator_c/servicios/srv/detail/save__functions.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
 

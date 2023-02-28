@@ -1,9 +1,11 @@
 {
   "package_name": "servicios",
-  "output_dir": "/home/sergio/turtle_bot_11/build/servicios/rosidl_typesupport_c/servicios",
+  "output_dir": "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_typesupport_c/servicios",
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_c/resource",
   "idl_tuples": [
-    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios:srv/ReproduceRoute.idl"
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios:srv/ReproduceRoute.idl",
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios:srv/Save.idl",
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios:srv/End.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -73,7 +75,9 @@
     "/opt/ros/humble/share/rosidl_typesupport_c/resource/idl__type_support.cpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_c/resource/msg__type_support.cpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em",
-    "/home/sergio/turtle_bot_11/build/servicios/rosidl_adapter/servicios/srv/ReproduceRoute.idl",
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios/srv/ReproduceRoute.idl",
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios/srv/Save.idl",
+    "/home/saviveros/RoboticaGrupo11/build/servicios/rosidl_adapter/servicios/srv/End.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

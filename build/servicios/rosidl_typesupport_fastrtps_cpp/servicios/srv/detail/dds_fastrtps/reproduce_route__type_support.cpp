@@ -232,8 +232,8 @@ cdr_serialize(
   const servicios::srv::ReproduceRoute_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: ruta
-  cdr << ros_message.ruta;
+  // Member: result
+  cdr << ros_message.result;
   return true;
 }
 
@@ -243,8 +243,8 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   servicios::srv::ReproduceRoute_Response & ros_message)
 {
-  // Member: ruta
-  cdr >> ros_message.ruta;
+  // Member: result
+  cdr >> ros_message.result;
 
   return true;
 }
@@ -262,10 +262,10 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: ruta
+  // Member: result
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message.ruta.size() + 1);
+    (ros_message.result.size() + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -288,7 +288,7 @@ max_serialized_size_ReproduceRoute_Response(
   is_plain = true;
 
 
-  // Member: ruta
+  // Member: result
   {
     size_t array_size = 1;
 

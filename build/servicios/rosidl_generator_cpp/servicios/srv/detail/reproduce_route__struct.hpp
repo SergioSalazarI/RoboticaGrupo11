@@ -152,30 +152,30 @@ struct ReproduceRoute_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->ruta = "";
+      this->result = "";
     }
   }
 
   explicit ReproduceRoute_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : ruta(_alloc)
+  : result(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->ruta = "";
+      this->result = "";
     }
   }
 
   // field types and members
-  using _ruta_type =
+  using _result_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _ruta_type ruta;
+  _result_type result;
 
   // setters for named parameter idiom
-  Type & set__ruta(
+  Type & set__result(
     const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
-    this->ruta = _arg;
+    this->result = _arg;
     return *this;
   }
 
@@ -221,7 +221,7 @@ struct ReproduceRoute_Response_
   // comparison operators
   bool operator==(const ReproduceRoute_Response_ & other) const
   {
-    if (this->ruta != other.ruta) {
+    if (this->result != other.result) {
       return false;
     }
     return true;

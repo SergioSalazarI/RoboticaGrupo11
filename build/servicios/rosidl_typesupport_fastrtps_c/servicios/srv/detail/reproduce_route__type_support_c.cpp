@@ -238,9 +238,9 @@ extern "C"
 #endif
 
 // already included above
-// #include "rosidl_runtime_c/string.h"  // ruta
+// #include "rosidl_runtime_c/string.h"  // result
 // already included above
-// #include "rosidl_runtime_c/string_functions.h"  // ruta
+// #include "rosidl_runtime_c/string_functions.h"  // result
 
 // forward declare type support functions
 
@@ -256,9 +256,9 @@ static bool _ReproduceRoute_Response__cdr_serialize(
     return false;
   }
   const _ReproduceRoute_Response__ros_msg_type * ros_message = static_cast<const _ReproduceRoute_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: ruta
+  // Field name: result
   {
-    const rosidl_runtime_c__String * str = &ros_message->ruta;
+    const rosidl_runtime_c__String * str = &ros_message->result;
     if (str->capacity == 0 || str->capacity <= str->size) {
       fprintf(stderr, "string capacity not greater than size\n");
       return false;
@@ -282,18 +282,18 @@ static bool _ReproduceRoute_Response__cdr_deserialize(
     return false;
   }
   _ReproduceRoute_Response__ros_msg_type * ros_message = static_cast<_ReproduceRoute_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: ruta
+  // Field name: result
   {
     std::string tmp;
     cdr >> tmp;
-    if (!ros_message->ruta.data) {
-      rosidl_runtime_c__String__init(&ros_message->ruta);
+    if (!ros_message->result.data) {
+      rosidl_runtime_c__String__init(&ros_message->result);
     }
     bool succeeded = rosidl_runtime_c__String__assign(
-      &ros_message->ruta,
+      &ros_message->result,
       tmp.c_str());
     if (!succeeded) {
-      fprintf(stderr, "failed to assign string into field 'ruta'\n");
+      fprintf(stderr, "failed to assign string into field 'result'\n");
       return false;
     }
   }
@@ -315,10 +315,10 @@ size_t get_serialized_size_servicios__srv__ReproduceRoute_Response(
   (void)padding;
   (void)wchar_size;
 
-  // field.name ruta
+  // field.name result
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message->ruta.size + 1);
+    (ros_message->result.size + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -346,7 +346,7 @@ size_t max_serialized_size_servicios__srv__ReproduceRoute_Response(
   full_bounded = true;
   is_plain = true;
 
-  // member: ruta
+  // member: result
   {
     size_t array_size = 1;
 

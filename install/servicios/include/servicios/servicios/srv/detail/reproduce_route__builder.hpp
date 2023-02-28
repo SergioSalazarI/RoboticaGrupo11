@@ -63,15 +63,15 @@ namespace srv
 namespace builder
 {
 
-class Init_ReproduceRoute_Response_ruta
+class Init_ReproduceRoute_Response_result
 {
 public:
-  Init_ReproduceRoute_Response_ruta()
+  Init_ReproduceRoute_Response_result()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::servicios::srv::ReproduceRoute_Response ruta(::servicios::srv::ReproduceRoute_Response::_ruta_type arg)
+  ::servicios::srv::ReproduceRoute_Response result(::servicios::srv::ReproduceRoute_Response::_result_type arg)
   {
-    msg_.ruta = std::move(arg);
+    msg_.result = std::move(arg);
     return std::move(msg_);
   }
 
@@ -90,7 +90,7 @@ template<>
 inline
 auto build<::servicios::srv::ReproduceRoute_Response>()
 {
-  return servicios::srv::builder::Init_ReproduceRoute_Response_ruta();
+  return servicios::srv::builder::Init_ReproduceRoute_Response_result();
 }
 
 }  // namespace servicios

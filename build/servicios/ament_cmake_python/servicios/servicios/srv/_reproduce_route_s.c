@@ -165,8 +165,8 @@ bool servicios__srv__reproduce_route__response__convert_from_py(PyObject * _pyms
     assert(strncmp("servicios.srv._reproduce_route.ReproduceRoute_Response", full_classname_dest, 54) == 0);
   }
   servicios__srv__ReproduceRoute_Response * ros_message = _ros_message;
-  {  // ruta
-    PyObject * field = PyObject_GetAttrString(_pymsg, "ruta");
+  {  // result
+    PyObject * field = PyObject_GetAttrString(_pymsg, "result");
     if (!field) {
       return false;
     }
@@ -176,7 +176,7 @@ bool servicios__srv__reproduce_route__response__convert_from_py(PyObject * _pyms
       Py_DECREF(field);
       return false;
     }
-    rosidl_runtime_c__String__assign(&ros_message->ruta, PyBytes_AS_STRING(encoded_field));
+    rosidl_runtime_c__String__assign(&ros_message->result, PyBytes_AS_STRING(encoded_field));
     Py_DECREF(encoded_field);
     Py_DECREF(field);
   }
@@ -202,17 +202,17 @@ PyObject * servicios__srv__reproduce_route__response__convert_to_py(void * raw_r
     }
   }
   servicios__srv__ReproduceRoute_Response * ros_message = (servicios__srv__ReproduceRoute_Response *)raw_ros_message;
-  {  // ruta
+  {  // result
     PyObject * field = NULL;
     field = PyUnicode_DecodeUTF8(
-      ros_message->ruta.data,
-      strlen(ros_message->ruta.data),
+      ros_message->result.data,
+      strlen(ros_message->result.data),
       "replace");
     if (!field) {
       return NULL;
     }
     {
-      int rc = PyObject_SetAttrString(_pymessage, "ruta", field);
+      int rc = PyObject_SetAttrString(_pymessage, "result", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -3,6 +3,7 @@ from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool
+from std_msgs.msg import String
 
 import pygame
 from pygame.locals import *
@@ -10,7 +11,11 @@ from pygame.locals import *
 import tkinter as tk
 from tkinter import filedialog
 
-#from servicios.srv import ReproduceRoute
+import queue
+
+from servicios.srv import ReproduceRoute
+from servicios.srv import Save
+from servicios.srv import End
 
 class Cell:
     """Crea objetos tipo casilla y los pinta en la pantalla de pygame.
@@ -299,6 +304,9 @@ class DialogBox():
                     for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
                         if self.buttons[i].rectangle.collidepoint(event.pos):
                             win = i
+                            print(f"Boton {i}")
+                            break
+
             if win == 0:
                 running = False
                 selection = "Teclas"
@@ -315,6 +323,7 @@ class DialogBox():
                     for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
                         if self.buttons[i].rectangle.collidepoint(event.pos):
                             win = i
+                            break
             if win == 0:
                 running = False
                 selection = "Yes"
@@ -323,17 +332,16 @@ class DialogBox():
                 selection = "No"
 
         elif window == "TXT":
-            win = 5
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
                         if self.buttons[i].rectangle.collidepoint(event.pos):
-                            win = i
-            if win == 0:
-                running = False
-                selection = "BuscadorArchivos"
+                            running = False
+                            selection = "BuscadorArchivos"
+                            print(f"Se presiono boton {selection}")
+                            break
 
         elif window == "Tablero":
             img_name = self.nameTextBox.text
@@ -351,6 +359,7 @@ class DialogBox():
                     for i in range(len(self.buttons)): #Recorremos la lista de botones y pintamos cada uno sobre la pantalla
                         if self.buttons[i].rectangle.collidepoint(event.pos):
                             win = i
+                            break
     
             if win == 0:
                 selection = "Save"
@@ -375,7 +384,7 @@ class DialogBox():
             self.nameTextBox.setText(img_name)
             self.paintDialog((250,250,250),(0,500, 500, 80))
 
-        return running,selection
+        return running, selection
 
     def paintDialog(self,bgColor,rect):
         pygame.draw.rect(self.screen, bgColor,rect)
@@ -391,65 +400,64 @@ class DialogBox():
 class Interface(Node):
     """Crea la interfaz. Hereda de la superclase Node"""
 
-    def __init__(self, screen, board, dialogBox,window,answ,file_path):
+    def __init__(self, screen, board, dialogBox,window):
         """Cosntructor de la clase interfaz. Crea el nodo 'turtle_bot_interface' y se suscribe al tópico 'turtlebot_position'
         para conocer la posición en tiempo real del robot sobre el entorno de coppelia.
         """
         super().__init__('turtle_bot_interface')
 
         #Creamos la subscripción al tópico 'turtlebot_position'
-        self.subscription = self.create_subscription(Twist,'turtlebot_position',self.listener_callback,10)
+        self.subscriptionTwist = self.create_subscription(Twist,'turtlebot_position',self.listener_position,10)
 
-        #Le indicamos el tópico en el cual va a publicar si se quiere o no guardar el recorrido
-        self.save_publisher = self.create_publisher(Bool,'/turtlebot_save',10)
+        self.subscriptionString = self.create_subscription(String,'turtlebot_route',self.listener_route,10)
 
-        #Le indicamos el tópico en el cual va a publicar si se desea finalizar el recorrido
-        self.end_publisher = self.create_publisher(Bool,'/turtlebot_end',10)
-
-        #Creamos el cliente:
-        #self.client = self.create_client(ReproduceRoute, "ReproduceRoute")
+        #Creamos los clientes:
+        self.client = self.create_client(ReproduceRoute, "ReproduceRoute")
 
         self.screen = screen
         self.board = board
         self.dialogBox = dialogBox
         self.window = window
-        self.answ = answ
-        self.file_path = file_path
+        self.route = []
 
-    def publish(self):
-        if self.answ.data:
-            #Publicamos la respuesta del usuario en el tópico:
-            self.save_publisher.publish(self.answ)
-            print(f"[INFO] Se publico la respuesta SI. answ = {self.answ.data}")
+    def CallClient_TxtRoute(self,file_path):
+        print(f"[INFO] file_path = {file_path}")
 
-        if self.file_path != "":
-            pass
-            """request = ReproduceRoute.Request()
-            request.filepath = self.file_path
-            ReproduceRoute.call_async(request)"""
-        
-    def listener_callback(self, msg):
+        if file_path != "":
+            request = ReproduceRoute.Request()
+            request.file_path = str(file_path)
+            self.client.call_async(request)
+            print(f"[INFO] Request route form txt sent. request = {request}")
+            
+    def listener_route(self, msg):
+        print(f"El mensaje es {msg.data}")
+        self.route.append(msg.data)
+    
+    def SaveRoute(self):
+        root = tk.Tk()
+        root.withdraw()
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".txt",
+            filetypes=[("Archivo TXT","*.txt")]
+        )
+        with open(file_path,'w') as f:
+            f.writelines(self.route) 
+
+    def listener_position(self, msg):
         msgx = msg.linear.x
         msgy = msg.linear.y
-
-        self.publish()
 
         '''Revisa que en el caso de tener un evento de tipo QUIT, es decir, que se presione la x en la ventana de
         pygame, esta se cierre cambiando la variable running a false'''
         running,selection = self.dialogBox.eventListener(self.window)
-
-        #Guardamos la bandera de finalizar recorrido en un dato tipo Bool:
-        end = Bool()
 
         if  running:
             '''Mueve el robot a la posición que viene de Coppelia'''        
             self.board.moveRobot(msgx,msgy)
 
             if selection == "end":
-                end.data = True
-                #Publicamos la bandera de finalizar recorrido en el tópico:
-                self.end_publisher.publish(end)
-                print(f"[INFO] Se publico la end TRUE. answ = {end}")
+                self.SaveRoute()
+                print(f"[INFO] Route Saved.")
 
 
             '''Actualiza la pantalla de pygame para que aparezca en pantalla el movimiento del robot'''
@@ -609,8 +617,7 @@ class App():
                 window = selection
 
         #Guardamos la respuesta del usuario en un mensaje tipo Bool:
-        answ = Bool()
-        answ.data = False
+        answ = False
         file_path = ""
 
         if winTeclas:
@@ -642,7 +649,7 @@ class App():
                     winTeclas = False
                     winTXT = False
                     winTablero2 = False
-                    answ.data = True
+                    answ = True
                 elif selection == "No":
                     winTablero2 = True
                     window = "Tablero"
@@ -650,7 +657,6 @@ class App():
                     winTeclas = False
                     winTXT = False
                     winTablero = False
-
 
         elif winTXT:
             #Pantalla que pregunta si se quiere guardar el recorrido:
@@ -683,6 +689,8 @@ class App():
                     winTXT = False
                     winTablero = False
 
+                    print(f"Estamos abriendo el buscador de archivos")
+
                     #Abrimos el buscador de archivos para obtener la ruta del archivo:
                     root = tk.Tk()
                     root.withdraw()
@@ -690,7 +698,7 @@ class App():
                         defaultextension=".txt", 
                         filetypes=[("Archivo TXT", "*.txt")]
                     )
-                    
+                    print(f"File Path {file_path}")
 
         if winTablero or winTablero2:
 
@@ -708,7 +716,7 @@ class App():
             if winTablero:
                 button = self.createBoardButtons(fuente, Grey, Black,True,Red)
             else: 
-                button = self.createBoardButtons(fuente, Grey, Black,False)
+                button = self.createBoardButtons(fuente, Grey, Black,False,Red)
 
             #Creamos la lista de plantas y añadimos 4 objetos de tipo planta que recreen las observadas en Coppelia:
             plants = self.createPlants(Green)
@@ -727,7 +735,12 @@ class App():
 
             
             rclpy.init()
-            interface_node = Interface(screen, board, dialogBox,window,answ,file_path)
+            interface_node = Interface(screen, board, dialogBox,window)
+            
+            if file_path != "":
+                print(f"[INFO] calling client txt route {file_path}")
+                interface_node.CallClient_TxtRoute(file_path)
+                
             rclpy.spin(interface_node)
 
             pygame.quit()

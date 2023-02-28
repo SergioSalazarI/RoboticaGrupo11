@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from servicios/srv/Save.srv
+// generated code does not contain a copyright notice
+
+
+module servicios {
+  module srv {
+    struct Save_Request {
+      boolean save;
+    };
+    struct Save_Response {
+      boolean result;
+    };
+  };
+};

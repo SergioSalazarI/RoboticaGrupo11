@@ -178,11 +178,11 @@ class ReproduceRoute_Response(metaclass=Metaclass_ReproduceRoute_Response):
     """Message class 'ReproduceRoute_Response'."""
 
     __slots__ = [
-        '_ruta',
+        '_result',
     ]
 
     _fields_and_field_types = {
-        'ruta': 'string',
+        'result': 'string',
     }
 
     SLOT_TYPES = (
@@ -193,7 +193,7 @@ class ReproduceRoute_Response(metaclass=Metaclass_ReproduceRoute_Response):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.ruta = kwargs.get('ruta', str())
+        self.result = kwargs.get('result', str())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -224,7 +224,7 @@ class ReproduceRoute_Response(metaclass=Metaclass_ReproduceRoute_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.ruta != other.ruta:
+        if self.result != other.result:
             return False
         return True
 
@@ -234,17 +234,17 @@ class ReproduceRoute_Response(metaclass=Metaclass_ReproduceRoute_Response):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def ruta(self):
-        """Message field 'ruta'."""
-        return self._ruta
+    def result(self):
+        """Message field 'result'."""
+        return self._result
 
-    @ruta.setter
-    def ruta(self, value):
+    @result.setter
+    def result(self, value):
         if __debug__:
             assert \
                 isinstance(value, str), \
-                "The 'ruta' field must be of type 'str'"
-        self._ruta = value
+                "The 'result' field must be of type 'str'"
+        self._result = value
 
 
 class Metaclass_ReproduceRoute(type):

@@ -1,8 +1,8 @@
-# Install script for directory: /home/sergio/turtle_bot_11/build/servicios/servicios__py
+# Install script for directory: /home/saviveros/RoboticaGrupo11/build/servicios/servicios__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sergio/turtle_bot_11/install/servicios")
+  set(CMAKE_INSTALL_PREFIX "/home/saviveros/RoboticaGrupo11/install/servicios")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

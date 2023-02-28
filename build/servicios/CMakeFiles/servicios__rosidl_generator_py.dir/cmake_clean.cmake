@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_end_s.c.o"
+  "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_end_s.c.o.d"
   "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_reproduce_route_s.c.o"
   "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_reproduce_route_s.c.o.d"
+  "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_save_s.c.o"
+  "CMakeFiles/servicios__rosidl_generator_py.dir/rosidl_generator_py/servicios/srv/_save_s.c.o.d"
   "rosidl_generator_py/servicios/libservicios__rosidl_generator_py.pdb"
   "rosidl_generator_py/servicios/libservicios__rosidl_generator_py.so"
 )

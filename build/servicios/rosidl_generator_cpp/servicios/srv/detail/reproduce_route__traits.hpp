@@ -117,10 +117,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: ruta
+  // member: result
   {
-    out << "ruta: ";
-    rosidl_generator_traits::value_to_yaml(msg.ruta, out);
+    out << "result: ";
+    rosidl_generator_traits::value_to_yaml(msg.result, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -129,13 +129,13 @@ inline void to_block_style_yaml(
   const ReproduceRoute_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: ruta
+  // member: result
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "ruta: ";
-    rosidl_generator_traits::value_to_yaml(msg.ruta, out);
+    out << "result: ";
+    rosidl_generator_traits::value_to_yaml(msg.result, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

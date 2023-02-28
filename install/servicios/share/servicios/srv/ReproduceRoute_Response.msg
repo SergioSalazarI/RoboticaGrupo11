@@ -1,2 +1,2 @@
 
-string ruta
+string result
