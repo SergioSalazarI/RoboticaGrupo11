@@ -4,9 +4,8 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Bool
-#from servicios.srv import SaveRoute
-from servicios.srv import ReproduceRoute
+from std_msgs.msg import String
+
 from functools import partial
 
 from pynput import keyboard as kb
@@ -17,49 +16,24 @@ from tkinter import filedialog
 from time import perf_counter
 
 class teleop(Node):
-    
-    def listener_callback_save(self,msg_save):
-        """Escucha el mensaje de tipo BOOL que llega al tópico 'turtlebot_save' y lo asigna a la variable 'save_route'.
-         
-          Args:
-            msg: Mensaje tipo BOOL que llega al tópico 'turtlebot_save'
-        """
-        print("________________________________________________________________")
-        print(f"msg_save ={msg_save.data}")
-        print("________________________________________________________________")
-        if msg_save.data:
-          self.save_route = 1
-          print("________________________________________________________________")
-          print("        save_route = 1")
-
-    def listener_callback_end(self,msg_end):
-        """Escucha el mensaje de tipo BOOL que llega al tópico 'turtlebot_end' y lo asigna en la variable 'end'.
-         
-          Args:
-            msg: Mensaje tipo BOOL que llega al tópico 'turtlebot_end'
-        """
-        print("________________________________________________________________")
-        print(f"msg_end = {msg_end.data}")
-        print("________________________________________________________________")
-        if msg_end.data:
-            self.end = 1
-            print("________________________________________________________________")
-            print("        end = 1")
+    """Crea objetos de tipo nodo."""
     
     def __init__(self):
+        """Constructor de la clase teleop."""
+
         super().__init__("turtle_bot_teleop")
-        self.route = []
         self.current_key = 'q'
+
+        #Creamos el publisher al tópico '/turtlebot_cmdVel':
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.get_logger().info("Turtle Teleop has been started correctly.")
-        
-        #Creamos la subscripción al tópico 'turtlebot_save' que indica si se quiere o no guardar el recorrido:
-        print("aquiaaaaaa")
-        self.subscription_save = self.create_subscription(Bool,'/turtlebot_save',self.listener_callback_save,10)
-        #Creamos la subscripción al tópico 'turtlebot_end' que indica cuando se quiere guardar el recorrido:
-        self.subscription_end = self.create_subscription(Bool,'/turtlebot_end',self.listener_callback_end,10)
+
+        #Creamos el publisher al tópico '/turtlebot_route':
+        self.cmd_publisher_route = self.create_publisher(String,'/turtlebot_route',10)
         
     def print_instructions(self):
+        """Imprime en la terminal las instrucciones de uso."""
+
         print("________________________________________________________________")
         print("                        Instrucciones")
         print("    Presione 'W' para ir hacia adelante.")
@@ -68,40 +42,44 @@ class teleop(Node):
         print(f"    Presione 'A' para rotar {self.angular_vel} grados a la izquierda.")
         print("________________________________________________________________")
         
-        #le pide al usuario los parametros de velocidad lineal y velocidad angular
+
     def receive_parameters(self):
+        """Pide los parámetros de velocidad lineal y angular al usuario y los publica en el tópico '/turtlebot_route'"""
+        
         self.linear_vel = float(input("[INFO] Indique la velocidad lineal deseada:"))
         self.angular_vel = float(input("[INFO] Indique la velocidad angular deseada:"))
-        self.save_route = float(input("[INFO] ¿Desea guardar la ruta?"))
+
+        s = String()
+        s.data = f"{self.linear_vel}\n{self.angular_vel}"
+
+        self.cmd_publisher_route.publish(s)
         self.print_instructions()
         
-        #multiplica la velocidad lineal y angular por -1 o 1 dependiendo del casp
     def key_callback(self,a,l):
+        """Multiplica la velocidad lineal y angular por -1 o 1 dependiendo de la tecla presionada. Publica el
+        mensaje tipo Twist en el tópico '/turtlebot_cmdVel'."""
+
         twist_mss = Twist()
         twist_mss.linear.x = a*self.linear_vel #a=1 adelante
         twist_mss.angular.z = l*self.angular_vel #l=1 derecha
         self.cmd_publisher.publish(twist_mss)
         
-        #para el movimiento cuando se deja de presionar la tecla
     def stops_movement(self):
+        """Detiene el movimiento del robot cuando se deja de presionar una tecla. Publica el mensaje tipo
+        Twist en el tópico '/turtlebot_cmdVel' con velocidad lineal y angular en cero."""
+
         twist_mss = Twist()
         twist_mss.linear.x = 0.0
         twist_mss.angular.z = 0.0
         self.cmd_publisher.publish(twist_mss)
-        
-    def callback_SaveRoute(self,ruta):
-        root = tk.Tk()
-        root.withdraw()
-        file_path = filedialog.asksaveasfilename(
-            defaultextension=".txt",
-            filetypes=[("Archivo TXT","*.txt")]
-        )
-        with open(file_path,'w') as f:
-            f.writelines([str(self.linear_vel)+"\n",str(self.angular_vel)])
-            f.writelines(ruta)          
-    
-    #asigna valores a y l dependiendo de la tecla presionada
+
     def on_press(self,key):
+        """Cuando se presiona una tecla en el teclado, si es 'w','a','s' o 'd' asigna un valor a las variables
+        a y l que multiplican por 1 o -1 las velocidades lineales y angulares respectivamente.
+        
+        Args:
+            key: tecla presionada en el teclado
+        """
         try:
             if key.char in ['w','a','s','d']:
                 a = 0
@@ -117,62 +95,39 @@ class teleop(Node):
                 self.key_callback(a,l)
             else:
                 print("La tecla presionada no tiene un movimiento asociado \n Siga las instrucciones.")
-                self.print_instructions()
                 
             if key.char != self.current_key:
                 self.current_time = perf_counter()
                 self.current_key = key.char
-            
-            if key.char == 'n' and self.save_route==1:
-                print("[INFO] Se guardo el recorrido.")
-                self.callback_SaveRoute(self.route) 
-            
-            if key.char == 'p' and self.save_route==1:
-                self.get_route()
-                self.callback_get_route()
+             
         except:
             print("Caracter especial no identificado.")
-            self.print_instructions()
         
-        #llama a la función de parar cuando la tecla se deja de presionar
     def on_release(self,key):
-        diff = perf_counter()-self.current_time
-        self.current_time = perf_counter()
-        try:
-            if self.save_route==1 :
-                self.route.append("\n"+key.char+";"+str(diff))
-        except:
-            print("hay un problema :))")
+        """Cuando se deja de presionar la tecla, llama a la función que detiene el movimiento del robot.
+        Publica en el tópico '/turtlebot_route' el String que contiene la tecla presionada y el tiempo que
+        se presionó.
+        
+        Args:
+            key: tecla que se dejo de presionar en el teclado.
+        """
+
+        if key.char in ['w','a','s','d']:
+
+            diff = perf_counter()-self.current_time
+            self.current_time = perf_counter()
+
+            #Crea el mensaje tipo String y lo publica en el tópico:
+            string_mss = String()
+            string_mss.data = f"\n{key.char};{diff}"
+            self.cmd_publisher_route.publish(string_mss)
+        
         self.stops_movement()
         
-        #espera que se presione una tecla para escucharla y ejecutar alguna función
     def listen_keyboard(self):
+        """Ecucha el teclado y esta a la espera de que se presione una tecla para ejecutar alguna función."""
         with kb.Listener(on_press=self.on_press,on_release=self.on_release) as listener:
             listener.join()
-            
-    def get_route(self):
-        root = tk.Tk()
-        root.withdraw()
-        self.file_path = filedialog.askopenfilename(
-            defaultextension=".txt",
-            filetypes=[("Archivo TXT","*.txt")])
-        print(f"[INFO] Usted selecciono la ruta: {self.file_path}")    
-        
-    def callback_get_route(self):
-        cliente = self.create_client(ReproduceRoute,"/RP")
-        while not cliente.wait_for_service(1.0):
-            self.get_logger().info("---------------")
-        
-        request = ReproduceRoute.Request()
-        request.file_path = self.file_path
-
-        self.future = cliente.call_async(request)
-        rclpy.spin_until_future_complete(self,future=self.future)
-
-        self.estado=self.future.result().ruta
-        self.get_logger().info(self.estado) 
-        self.get_logger().info('Funciona <3 <3 <3') 
-        
 
 def main(args=None):
     rclpy.init(args=args)

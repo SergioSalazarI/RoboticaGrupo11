@@ -12,11 +12,23 @@ from servicios.srv import ReproduceRoute
 
 class route_saver(Node):
     def __init__(self):
+        """"
+        Constructor de la clase 'route_saver'. Crea el nodo con nombre 'route_saver', el cual pública en el tópico
+         '/turtlebot_cmdVel'. Tambien crea el servicio encargado de reproducir la ruta contenida en un archico .txt
+        """
         super().__init__('route_saver')
         self.cmd_publisher = self.create_publisher(Twist,'/turtlebot_cmdVel',10)
         self.srv = self.create_service(ReproduceRoute, "/RP", self.replicate_route_callback)
 
     def replicate_route_callback(self, request, response):
+        """"
+        Respuesta del llamado del servicio.
+        Dado un path por paŕametro en 'request', se réplica la ruta que describe el archivo txt del path indicado.
+        
+        Args:
+            request: clase asociada a las entradas del servicio
+            response:  clase asociada a las salidas del servicio
+        """
         self.file_path = request.file_path
         
         self.read_vels()
@@ -25,20 +37,12 @@ class route_saver(Node):
         response.ruta= "esta correcto :))"                                      
         self.get_logger().info('Funciona <3 <3 <3') 
         return response
-
-    """ def callback_get_route(self):
-        cliente = self.create_client(ReproduceRoute,"/RP")
-        while not cliente.wait_for_service(1.0):
-            self.get_logger().info("---------------")
-        request = ReproduceRoute.Request()
-        request.file_path = "self.file_path"
-
-        self.future = cliente.call_async(request)
-        rclpy.spin_until_future_complete(self,future=self.future)
-
-        self.file_path=self.future.result().ruta """
         
     def read_vels(self):
+        """"
+        Abre el archivo txt del path indicado e identifica los parámetros de la ruta. Es decir, la velocidad lineal y
+        la velocidad angular.
+        """
         f = open(self.file_path)
         lines = f.readlines()
         self.linear_vel = float(lines[0])
@@ -46,12 +50,20 @@ class route_saver(Node):
         f.close()
     
     def key_callback(self,a,l):
+        """Multiplica la velocidad lineal y angular por -1 o 1 dependiendo de la tecla presionada. Publica el
+        mensaje tipo Twist en el tópico '/turtlebot_cmdVel'."""
         twist_mss = Twist()
         twist_mss.linear.x = a*self.linear_vel #a=1 adelante
         twist_mss.angular.z = l*self.angular_vel #l=1 derecha
         self.cmd_publisher.publish(twist_mss)
         
     def replicate_route(self,key):
+        """Cuando se presiona una tecla en el teclado, si es 'w','a','s' o 'd' asigna un valor a las variables
+        a y l que multiplican por 1 o -1 las velocidades lineales y angulares respectivamente.
+        
+        Args:
+            key: tecla presionada en el teclado
+        """
         if key in ['w','a','s','d']:
             a = 0
             l = 0
@@ -68,6 +80,8 @@ class route_saver(Node):
             print("La tecla presionada no tiene un movimiento asociado \n Siga las instrucciones.")
             
     def stops_movement(self):
+        """Detiene el movimiento del robot cuando se deja de presionar una tecla. Publica el mensaje tipo
+        Twist en el tópico '/turtlebot_cmdVel' con velocidad lineal y angular en cero."""
         twist_mss = Twist()
         twist_mss.linear.x = 0.0
         twist_mss.angular.z = 0.0
@@ -75,7 +89,13 @@ class route_saver(Node):
 
         
     def read_keys(self):
-        #try:
+        """"
+        Dado el path del archivo txt, abre el archivo y lee cada linea. Luego, utiliza la función 
+        'replicate_route' con la información de cada linea.
+            key: letra que contiene la linea actual
+            duration: tiempo que se presiono la letra
+        """
+        try:
             f = open(self.file_path)
             lines = f.readlines()[2::]
             for l in lines:
@@ -89,19 +109,15 @@ class route_saver(Node):
                     self.replicate_route(key)
                     diff = perf_counter()-current_time
                 self.stops_movement()
-            print("fin")
-        #except:
-        #    print("[INFO] No fue posible replicar su ruta. Revise el archivo seleccionado.")
+            print("[INFO] Se réplico con éxito la ruta indicada.")
+        except:
+            print("[INFO] No fue posible replicar su ruta. Revise el archivo seleccionado.")
 
 def main(args=None):
+    
     rclpy.init(args=args)
-
     route = route_saver()
 
-    #route.callback_get_route()
-    #print("-$$--$$--$$--$$--$$--$$--$$")
-    #route.read_vels()
-    #route.read_keys()
     while rclpy.ok():
         rclpy.spin_once(route)
 
