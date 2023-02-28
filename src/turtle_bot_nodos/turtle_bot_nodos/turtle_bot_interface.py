@@ -14,8 +14,6 @@ from tkinter import filedialog
 import queue
 
 from servicios.srv import ReproduceRoute
-from servicios.srv import Save
-from servicios.srv import End
 
 class Cell:
     """Crea objetos tipo casilla y los pinta en la pantalla de pygame.
@@ -214,7 +212,8 @@ class Board:
         """Mueve el robot a la posición (x,y) contenida en msg.
 
         Args:
-            msg: contiene las coordenadas (x,y) de la ubicación del robot contenidas en el mensaje recibido a través del tópico 'turtlebot_position'
+            msgx: contiene la coordenada x de la ubicación del robot contenidas en el mensaje recibido a través del tópico 'turtlebot_position'
+            msgy: contiene la coordenada y de la ubicación del robot contenidas en el mensaje recibido a través del tópico 'turtlebot_position'
         """
         self.robot.move(msgx,msgy)
         self.path.append(self.robot.center)
@@ -262,16 +261,44 @@ class TextBox():
         self.setText(text)
 
     def setText(self, text):
+        """Crea un cuadro de texto con el texto deseado.
+
+        Args:
+            text: texto que se va a añadir en el cuadro de texto
+        """
         self.text = text
         self.surface = self.fuente.render(text, True, self.color)
         self.box = self.surface.get_rect()
         self.box.center = self.center
 
     def paint(self, screen):
+        """Pinta el cuadro de texto en la pantalla de pygame.
+        
+        Args:
+            screen: pantalla en la cual se desea pintar el cuadro de texto
+        """
         screen.blit(self.surface, self.box)
 
 class Button():
+    """Crea objetos tipo 'Botón' con el caption deseado.
+    
+    Args:
+        rectangle: rectángulo en el cual se va a contener el botón
+        fuente: tipo de letra a utilizar para escribir el caption del botón
+        backgroundColor: color de fondo con el cual se va a pintar el botón
+        textColor: color del texto con el que se escribe el caption del botón
+        caption: texto a escribir en el botón
+    """
     def __init__(self, rectangle, fuente, backgroundColor, textColor,caption):
+        """Constructor de la clase botón.
+    
+        Args:
+            rectangle: rectángulo en el cual se va a contener el botón
+            fuente: tipo de letra a utilizar para escribir el caption del botón
+            backgroundColor: color de fondo con el cual se va a pintar el botón
+            textColor: color del texto con el que se escribe el caption del botón
+            caption: texto a escribir en el botón
+        """
         self.rectangle = rectangle
         self.color = backgroundColor
         self.caption = caption
@@ -280,22 +307,48 @@ class Button():
         self.box.center = self.rectangle.center
 
     def paint(self, screen):
+        """Pinta el botón en la ventana de pygame.
+        
+        Args: 
+            screen: Pantalla en la cual se desea pintar el botón
+        """
         pygame.draw.rect(screen, self.color, self.rectangle)
         screen.blit(self.surface, self.box)  
 
 class DialogBox():
+    """Crea objetos de tipo cuadro de dialogo.
+    
+    Args:
+        screen: pantalla en la cual se va a pintar el cuadro de dialogo
+        buttons: lista de los botones a añadir en el cuadro de dialogo
+        instructionsTextBox: caja de texto que contiene las instrucciones de la ventana
+        nameTextBox: caja de texto en la cual el usuario puede escribir en la interfaz
+    """
     def __init__(self, screen, buttons, instructionsTextBox, nameTextBox=None):
+        """Constructor de la clase cuadro de dialogo.
+    
+        Args:
+            screen: pantalla en la cual se va a pintar el cuadro de dialogo
+            buttons: lista de los botones a añadir en el cuadro de dialogo
+            instructionsTextBox: caja de texto que contiene las instrucciones de la ventana
+            nameTextBox: caja de texto en la cual el usuario puede escribir en la interfaz
+        """
         self.screen = screen
         self.buttons = buttons
         self.instructionsTextBox = instructionsTextBox
         self.nameTextBox = nameTextBox
 
     def eventListener(self,window):
+        """Escucha los eventos en los cuadros de dialogo, actua cuando se presiona algún botón.
+        
+        Args:
+            window: string que indica la ventana actual
+        """
 
         running = True
         selection = ""
 
-        if window == "Menu":
+        if window == "Menu": #Ventana Inicial
             win = 5
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -307,6 +360,7 @@ class DialogBox():
                             print(f"Boton {i}")
                             break
 
+            #Evalúa el botón presionado                
             if win == 0:
                 running = False
                 selection = "Teclas"
@@ -387,6 +441,12 @@ class DialogBox():
         return running, selection
 
     def paintDialog(self,bgColor,rect):
+        """Pinta el cuadro de dialogo en la ventana de pygame.
+        
+        Args:
+            bgColor: color de fondo para el cuadro de dialogo
+            rect: rectangulo en el que se pinta el cuadro de dialogo dentro de la interfaz
+        """
         pygame.draw.rect(self.screen, bgColor,rect)
 
         if self.nameTextBox != None:
@@ -398,20 +458,34 @@ class DialogBox():
             self.buttons[i].paint(self.screen)
 
 class Interface(Node):
-    """Crea la interfaz. Hereda de la superclase Node"""
+    """Crea la interfaz. Hereda de la superclase Node.
+
+    Args:
+        screen: pantalla en la que se va pintar
+        board: tablero a pintar objeto de la clase Board 
+        dialogbox: cuadro de dialogo a pintar objeto de la clase DialogBox
+        window: string que indica la ventana actual
+    """
 
     def __init__(self, screen, board, dialogBox,window):
         """Cosntructor de la clase interfaz. Crea el nodo 'turtle_bot_interface' y se suscribe al tópico 'turtlebot_position'
         para conocer la posición en tiempo real del robot sobre el entorno de coppelia.
+
+        Args:
+            screen: pantalla en la que se va pintar
+            board: tablero a pintar objeto de la clase Board 
+            dialogbox: cuadro de dialogo a pintar objeto de la clase DialogBox
+            window: string que indica la ventana actual
         """
+
         super().__init__('turtle_bot_interface')
 
         #Creamos la subscripción al tópico 'turtlebot_position'
         self.subscriptionTwist = self.create_subscription(Twist,'turtlebot_position',self.listener_position,10)
-
+        #Creamos la subscripción al tópico 'turtlebot_route'
         self.subscriptionString = self.create_subscription(String,'turtlebot_route',self.listener_route,10)
 
-        #Creamos los clientes:
+        #Creamos el cliente:
         self.client = self.create_client(ReproduceRoute, "ReproduceRoute")
 
         self.screen = screen
@@ -421,6 +495,11 @@ class Interface(Node):
         self.route = []
 
     def CallClient_TxtRoute(self,file_path):
+        """Llama al cliente ReproduceRoute y le hace una solicitud.
+         
+        Args:
+            file_path: ruta del archivo TXT que se desea replicar con coppelia.
+        """
         print(f"[INFO] file_path = {file_path}")
 
         if file_path != "":
@@ -430,10 +509,16 @@ class Interface(Node):
             print(f"[INFO] Request route form txt sent. request = {request}")
             
     def listener_route(self, msg):
+        """Escucha los mensajes tipo String() que se reciben por el tópico 'turtlebot_route' y los añade a una lista 'route'.
+        
+        Args:
+            msg: mensaje enviado a través del tópico 'turtlebot_route'
+        """
         print(f"El mensaje es {msg.data}")
         self.route.append(msg.data)
     
     def SaveRoute(self):
+        """Guarda la lista 'route' en un archivo .txt"""
         root = tk.Tk()
         root.withdraw()
         file_path = filedialog.asksaveasfilename(
@@ -444,6 +529,12 @@ class Interface(Node):
             f.writelines(self.route) 
 
     def listener_position(self, msg):
+        """Escucha los mensajes tipo Twist() que se reciben por el tópico 'turtlebot_position' y replica los movimientos del robot
+        en la interfaz.
+        
+        Args:
+            msg: mensaje tipo Twist que contiene la posición actual del robot en el marco de referencia inercial
+        """
         msgx = msg.linear.x
         msgy = msg.linear.y
 
@@ -468,10 +559,17 @@ class Interface(Node):
             pygame.quit()
             self.destroy_node()
             rclpy.shutdown()
+
 class App():
+    """Crea objetos de tipo Aplicación (interfaz)."""
 
     def createDisplay(self, coordinate,caption):
-        """Crea la pantalla en la cual se dibuja el recorrido del robot"""
+        """Crea la pantalla en la cual se dibuja el recorrido del robot.
+        
+        Args:
+            coordinate: dupla que contiene el tamaño de la pantalla que se quiere crear
+            caption: nombre que se quiere mostrar en la ventana
+        """
         screen = pygame.display.set_mode(coordinate)
         pygame.display.set_caption(caption)
         return screen
@@ -480,7 +578,9 @@ class App():
         """Crea el arreglo de botones del menu.
         
         Args:
-            fuente: 
+            fuente: tipo de letra que se quiere usar para escribir el texto de los botones
+            bgColor: color de fondo que se quiere usar para crear los botones
+            TxtColor: color del texto que se quiere usar para escribir el texto de los botones
         """
         buttons = []
         buttons.append(Button(pygame.Rect(80, 100, 350, 50), fuente, bgColor, TxtColor,"Mover Coppelia con Teclas"))
@@ -492,7 +592,9 @@ class App():
         """Crea un arreglo con los botones 'Si' y 'No'.
         
         Args:
-            
+            fuente: tipo de letra que se quiere usar para escribir el texto de los botones
+            bgColor: color de fondo que se quiere usar para crear los botones
+            TxtColor: color del texto que se quiere usar para escribir el texto de los botones
         """
         buttons = []
         buttons.append(Button(pygame.Rect(200, 100, 100, 50), fuente, bgColor, TxtColor,"Si"))
@@ -504,7 +606,9 @@ class App():
         """Crea un arreglo con el botón 'seleccionar'.
         
         Args:
-            
+            fuente: tipo de letra que se quiere usar para escribir el texto de los botones
+            bgColor: color de fondo que se quiere usar para crear los botones
+            TxtColor: color del texto que se quiere usar para escribir el texto de los botones
         """
         buttons = []
         buttons.append(Button(pygame.Rect(100, 150, 250, 50), fuente, bgColor, TxtColor,"Seleccionar"))
@@ -515,7 +619,11 @@ class App():
         """Crea un arreglo con el botón 'seleccionar'.
         
         Args:
-            
+            fuente: tipo de letra que se quiere usar para escribir el texto de los botones
+            bgColor: color de fondo que se quiere usar para crear los botones
+            TxtColor: color del texto que se quiere usar para escribir el texto de los botones
+            btn: variable de tipo Boolean que indica si se debe añadir el botón 'Terminar Recorrido'
+            color: color para pintar el botón 'Terminar Recorrido'
         """
         buttons = []
         buttons.append(Button(pygame.Rect(200, 550, 100, 25), fuente, bgColor, TxtColor,"Guardar"))
@@ -541,6 +649,12 @@ class App():
 
 
     def createFont(self,type,size):
+        """Crea una fuente del tipo y tamaño seleccionado.
+        
+        Args:
+            type: tipo de letra a crear, puede ser negrilla o normal
+            size: tamaño de la fuente a crear
+        """
         if type == "bold":
             fuente = pygame.font.SysFont("Arial Black",size)
         elif type == "normal":
@@ -549,7 +663,7 @@ class App():
         return fuente
 
     def run(self):
-
+        """Ejecuta la aplicación."""
         #CONSTANTES:
 
         #Tamaño de la pantalla de pygame en pixeles:
@@ -733,10 +847,11 @@ class App():
             dialogBox = DialogBox(screen, button, instructionsTextBox, nameTextBox)
             dialogBox.paintDialog(White,(0,500, 500, 80))
 
-            
+            #creamos el nodo 'interface_node':
             rclpy.init()
             interface_node = Interface(screen, board, dialogBox,window)
             
+            #En el caso en que se elija replicar recorrido de archivo txt:
             if file_path != "":
                 print(f"[INFO] calling client txt route {file_path}")
                 interface_node.CallClient_TxtRoute(file_path)
