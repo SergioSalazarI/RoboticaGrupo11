@@ -11,5 +11,5 @@ Para el correcto funcionamiento de los paquetes se debe tener a disposición las
   <li>pynput</li>
   <li>pygame</li>
   <li>tkinter</li>
-  <li>time<//li>
+  <li>time</li>
 </ul>
