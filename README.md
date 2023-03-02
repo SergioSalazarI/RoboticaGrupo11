@@ -61,3 +61,28 @@ Para ejecutar el nodo escriba el siguiente comando en su terminal.
 ```
 ros2 run turtle_bot_nodos turtle_bot_teleop
 ```
+
+### Indicaciones para el correcto funcionamiento
+
+## Mover el robot con teclas sin .txt
+
+Para mover el robot en *Coppelia* sin guardar el recorrido se recomienda:
+1. Correr la escena en Coppelia.
+2. Ejecutar el nodo *turtle_bot_interface* si desea tener la opción de guardar la trayectoria (imagen .jpg).
+3. Ejecutar el nodo *turtle_bot_teleop*
+
+## Mover el robot con teclas y guardar la ruta
+
+1. Correr la escena en Coppelia.
+2. Ejecutar el nodo *turtle_bot_interface*.
+3. Ejecutar el nodo *turtle_bot_teleop*
+4. Antes de guardar la ruta en formato *.txt* cerrar la terminal donde se ejecuta el nodo de teleoperación.
+5. Seleccionar *Terminar recorrido* y elegir la dirección y nombre del archivo *.txt*.
+
+## Mover el robot con un archivo .txt
+
+1. Correr la escena en Coppelia.
+2. Ejecutar el nodo turtle_bot_player.
+3. Ejecutar el nodo *turtle_bot_interface*.
+4. Seleccionar "Mover con .TXT".
+5. Cuando se abra el explorador de archivos, diríjase a la dirección donde está almacenado el archivo, luego escriba su nombre, incluya la extensión *.txt.*
